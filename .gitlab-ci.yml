@@ -1,0 +1,44 @@
+##
+# Необходимо настроить следующие переменные окружения в CI/CD:
+#     SSH_USER_HOST — имя пользователя и хост для SSH (например: technohub@dev.technohub.biz)
+#     SSH_PATH — путь, где должен располагаться каталог с проектом (например: /var/www/technohub/data/www)
+#     SSH_DIR — название каталога с проектом, который располагается в SSH_PATH (например: technohub.biz)
+##
+
+
+# Кешируем вендорские каталоги между билдами, чтобы попусту не гонять файлы
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - echo 'Pipeline:' $CI_PIPELINE_IID
+  - echo 'Testing needed environment variables...'
+  - test $SSH_USER_HOST || (echo 'You must set SSH_USER_HOST, SSH_PATH and SSH_DIR environment variables' && false)
+  - test $SSH_PATH      || (echo 'You must set SSH_USER_HOST, SSH_PATH and SSH_DIR environment variables' && false)
+  - test $SSH_DIR       || (echo 'You must set SSH_USER_HOST, SSH_PATH and SSH_DIR environment variables' && false)
+  - echo 'Needed environment variables:'
+  - echo ' $SSH_USER_HOST:' $SSH_USER_HOST
+  - echo '      $SSH_PATH:' $SSH_PATH
+  - echo '       $SSH_DIR:' $SSH_DIR
+  - npm i
+  - npm run build
+
+deploy:
+  stage: deploy
+  environment: production
+  script:
+    - cp src/index.html dist/index.html
+    - VERSION="s/666/$CI_PIPELINE_IID/g"
+    - sed -i "$VERSION" dist/index.html
+    - sed -i "s/2020-12-01T15:00:00/`date --iso-8601=seconds`/g" dist/index.html
+    - echo 'Building archive...'
+    - touch build.tar.gz
+    - tar --exclude=build.tar.gz --exclude=node_modules -czf build.tar.gz dist
+    - echo 'Deploying archive to production...'
+    - scp build.tar.gz $SSH_USER_HOST:$SSH_PATH/
+    - echo 'Unpacking...'
+    - ssh $SSH_USER_HOST "cd $SSH_PATH  &&  rm -rf build  &&  mkdir build &&  tar xzf build.tar.gz -C build"
+    - echo 'Syncing archive...'
+    - ssh $SSH_USER_HOST "cd $SSH_PATH  &&  rsync -a build/ $SSH_DIR/  &&  rm -rf build"
+    - echo 'Pipeline' $CI_PIPELINE_IID 'done.'

@@ -1,0 +1,15 @@
+{
+	"name": "sijeko-genestack",
+	"version": "1.0.0",
+	"description": "GeneStack website frontend",
+	"author": "Sijeko",
+	"license": "ISC",
+	"private": true,
+	"main": "src/index.html",
+	"devDependencies": {
+		"webpack": "^5.9.0"
+	},
+	"scripts": {
+		"build": "exit 0"
+	}
+}
