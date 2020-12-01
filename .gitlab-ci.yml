@@ -31,7 +31,7 @@ deploy:
     - cp src/index.html dist/index.html
     - VERSION="s/666/$CI_PIPELINE_IID/g"
     - sed -i "$VERSION" dist/index.html
-    - sed -i "s/2020-12-01T15:00:00/`date --iso-8601=seconds`/g" dist/index.html
+    - sed -i "s/2020-12-01T15:00:00+03:00/`date --iso-8601=seconds`/g" dist/index.html
     - echo 'Building archive...'
     - touch build.tar.gz
     - tar --exclude=build.tar.gz --exclude=node_modules -czf build.tar.gz dist

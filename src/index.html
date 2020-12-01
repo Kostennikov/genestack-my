@@ -20,7 +20,22 @@
 </ol>
 
 <footer>
-	Build #666 &middot; <time datetime="2020-12-01T15:00:00Z">2020-12-01T15:00:00Z</time>
+	Build #666
+	&middot;
+	<time datetime="2020-12-01T15:00:00+03:00">2020-12-01T15:00:00+03:00</time>
 </footer>
+
+
+<script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+<script
+	src="https://cdn.polyfill.io/v3/polyfill.js?features=default,String.prototype.repeat,Array.prototype.find,Array.prototype.findIndex,Math.trunc,Math.sign,Object.is"></script>
+<script>
+	window.addEventListener('load', function () {
+		document.querySelectorAll('time').forEach(function (element) {
+			element.innerText = luxon.DateTime.fromISO(element.getAttribute('datetime')).toRelative();
+		});
+	});
+</script>
+
 </body>
 </html>
