@@ -1,0 +1,163 @@
+//Buttons
+@mixin button {
+  display: inline-block;
+  padding: 0 20px;
+  height: $button-height;
+  border: none;
+  box-sizing: border-box;
+  line-height: $button-height;
+  //height: 45px;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  font-size: 1em;
+  font-weight: 300;
+  color: #fff;
+
+  border-radius: 50px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+  -webkit-transition: all .15s cubic-bezier(.25,.75,.75,1);
+  transition: all .15s cubic-bezier(.25,.75,.75,1);
+  background-size: 202% 100%;
+  background-position: 0 0;
+  background-image: -webkit-linear-gradient(to left, #023F79 50%, #0470BE 50%);
+  background-image: linear-gradient(to left, #023F79 50%, #0470BE 50%);
+  &:hover{
+    background-position-x: -98%;
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+  }
+}
+
+@mixin header-button{
+  display: inline-block;
+  width: 90vw;
+  max-width: 328px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 30px;
+}
+
+@mixin nav-item__hover{
+  color: #4F4F4F;
+}
+
+@mixin link-style{
+  text-decoration: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+@mixin transition{
+  -webkit-transition: all .15s cubic-bezier(.25, .75, .75, 1);
+  transition: all .15s cubic-bezier(.25, .75, .75, 1);
+  //-webkit-transition-delay: 100ms;
+  //transition-delay: 100ms;
+}
+
+
+//Fonts
+@mixin title-style($color: #0c0c0c){
+  font-family: $Ivar;
+  font-size: 44px;
+  line-height: 120%;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+}
+
+@mixin title-small($color: #0C0C0C){
+  font-family: $Larsseit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin regular-font(){
+  font-family: $Larsseit;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+  color: #262626;
+}
+
+@mixin small-bold-font(){
+  font-family: $Larsseit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #262626;
+}
+
+@mixin small-light-font{
+  font-family: $Larsseit;
+  font-style: normal;
+  font-weight: 300;
+  font-size: .875em;
+  //line-height: 150%;
+}
+
+@mixin header-text{
+  font-family: $Larsseit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  //line-height: 150%;
+
+}
+
+$path: '../assets/fonts/';
+
+$Larsseit: "Larsseit",
+Helvetica,
+Arial,
+sans-serif;
+
+$Ivar: "Ivar",
+"Times New Roman",
+serif;
+
+@mixin fontFaceLarsseit($name, $src, $weight, $style) {
+  $source: $path+$src;
+
+  @font-face {
+    font-family: $name;
+
+    src: url($source + '.woff2') format('woff2'),
+    url($source + '.woff') format('woff'),
+    url($source + '.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+@mixin fontFaceIvar($name, $src, $weight, $style) {
+  $source: $path+$src;
+
+  @font-face {
+    font-family: $name;
+
+    src: url($source + '.woff2') format('woff2'),
+    url($source + '.woff') format('woff'),
+    url($source + '.otf') format('otf');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+@include fontFaceLarsseit('Larsseit', 'Larsseit-Light', 300, normal);
+@include fontFaceLarsseit('Larsseit', 'Larsseit-Medium', 400, normal);
+@include fontFaceIvar('Ivar', 'IvarDisplay-Regular', 400, normal);
+@include fontFaceIvar('Ivar', 'IvarDisplay-Bold', 500, normal);
+

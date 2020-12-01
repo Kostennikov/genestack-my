@@ -7,9 +7,15 @@
 	"private": true,
 	"main": "src/index.html",
 	"devDependencies": {
-		"webpack": "^5.9.0"
+		"bootstrap": "^4.5.2",
+		"jquery": "^3.5.1",
+		"sass": "^1.26.11",
+		"slick-carousel": "^1.8.1",
+		"parcel": "^1.12.4",
+		"parcel-bundler": "^1.12.4"
 	},
 	"scripts": {
-		"build": "exit 0"
+		"build": "parcel build src/index.html",
+		"dev": "parcel src/index.html"
 	}
 }
