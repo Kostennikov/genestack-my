@@ -16,6 +16,6 @@
 	},
 	"scripts": {
 		"build": "parcel build src/index.html",
-		"dev": "parcel src/main.html"
+		"dev": "parcel src/catalog.html"
 	}
 }

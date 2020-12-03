@@ -78,17 +78,14 @@ navList.addEventListener('click', (event) => {
 	if (!dropDown) return;
 	console.log('dropItem:', dropItem);
 
-	if (navItem.classList.contains('arrow-rotate') && dropItem===navItem ) {
+	if (navItem.classList.contains('arrow-rotate') && dropItem === navItem) {
 		elem.classList.remove('dropdown-active');
 		navItem.classList.remove('arrow-rotate');
-
 
 	} else {
 		elem.classList.add('dropdown-active');
 		navItem.classList.add('arrow-rotate');
 	}
-
-
 
 });
 
@@ -280,4 +277,51 @@ footerHead.forEach((footerHead) => {
 	footerHead.classList.add('item-active');
 
 	// }
+});
+
+//page-2
+
+const circleConstructor = document.querySelector('.circle-constructor');
+const circleLite = document.querySelector('.circle-lite');
+const circlePath = document.querySelectorAll('.circle-lite__path');
+const circleLines = document.querySelectorAll('.circle-lines__text');
+
+// circleConstructor.addEventListener('click', fff())
+
+circleConstructor.addEventListener('click', (event) => {
+	circlePath.forEach((circlePath) => {
+		circlePath.classList.remove('circle-lite__path-active');
+		let target = event.target.closest('.circle-lite__path');
+		console.log(target);
+		target.classList.add('circle-lite__path-active');
+	});
+
+});
+circleLite.addEventListener('click', (event) => {
+	circleLines.forEach((circleLines) => {
+		circleLines.classList.remove('circle-lines__active');
+		let trigger = event.target.closest('.circle-lines__text');
+		console.log(trigger);
+		trigger.classList.add('circle-lines__active');
+	});
+});
+
+
+const circleItems = document.querySelector('.circle-demo__items');
+const circleItem = document.querySelectorAll('.circle-demo__item');
+
+const circleContent = document.querySelectorAll('.circle-demo__content');
+
+circleItems.addEventListener('click', function (event) {
+	event.preventDefault();
+	let target = event.target.closest('.circle-demo__item');
+	if (!target) return;
+	circleItem.forEach(function (event) {
+		event.classList.remove('circle-demo__active');
+		target.classList.add('circle-demo__active');
+	});
+	circleContent.forEach(function (demoContent) {
+		circleContent.classList.remove('circle-demo-show');
+		target.querySelector('.circle-demo__content').classList.add('circle-demo-show');
+	});
 });
