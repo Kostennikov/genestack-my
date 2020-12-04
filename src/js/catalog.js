@@ -3,9 +3,37 @@
 const circleConstructor = document.querySelector('.circle-constructor');
 const circleLite = document.querySelector('.circle-lite');
 const circlePath = document.querySelectorAll('.circle-lite__path');
-const circleLines = document.querySelectorAll('.circle-lines__text');
+let circleLines = document.querySelectorAll('.circle-lines__text');
 
 // circleConstructor.addEventListener('click', fff())
+let target = document.querySelector('.circle-constructor');
+
+
+const options = {
+	root: null,
+	rootMargin: '0px',
+	threshold: 0.7
+};
+
+let loadCircle = function (entries, observer) {
+	entries.forEach(entry => {
+		if (entry.isIntersecting && entry.target.classList.contains('circle-constructor')) {
+			entry.target.classList.add('constructor-active');
+			console.log('элемент в области наблюдения');
+			setTimeout(()=>{
+				circleLines.forEach((circleLines)=>{
+					circleLines.classList.add('circle-lines__load');
+				})
+			}, 1000)
+		}
+
+	});
+};
+
+const observer = new IntersectionObserver(loadCircle, options);
+
+observer.observe(target, circleLines);
+
 
 circleConstructor.addEventListener('click', (event) => {
 	circlePath.forEach((circlePath) => {
@@ -44,33 +72,29 @@ circleItems.addEventListener('click', function (event) {
 	});
 });
 
-const questionsList = document.querySelector('.questions__list');
+const questionsBlock = document.querySelector('.questions-block');
+const questionsList = document.querySelectorAll('.questions__list');
 const questionsTitle = document.querySelectorAll('.questions__list-title');
 const questionsContent = document.querySelector('.questions__list-content');
 
-questionsTitle.forEach((questionsTitle) => {
-	questionsTitle.classList.add('questions__list-plus');
-});
-questionsList.addEventListener('click', (event) => {
-	let listTitle = event.target.closest('.questions__list-title');
+questionsList.forEach((questionsBlock) => {
 
-	let elem = listTitle.querySelectorAll('.questions__list-content');
-	listTitle.classList.toggle('questions__list-disable');
-
-	elem.forEach((elem) => {
-		elem.classList.toggle('questions__list-show');
-		console.log(questionsContent);
+	questionsTitle.forEach((questionsTitle) => {
+		questionsTitle.classList.add('questions__list-plus');
 	});
 
-	// let trigger = event.target.closest('.footer-content__list');
-	// if (!trigger) return;
-	// console.log(trigger);
-	// let element = trigger.querySelectorAll('.footer-content__list-item');
-	//
-	// let elemClose = event.target.closest('.footer-content__list-head');
-	//
-	// elemClose.classList.toggle('item-deactive');
+	questionsBlock.addEventListener('click', (event) => {
+		event.preventDefault();
+		let listTitle = event.target.closest('.questions__list-title');
+		if (!listTitle) return;
+		let elem = listTitle.querySelectorAll('.questions__list-content');
+		listTitle.classList.toggle('questions__list-disable');
 
+		elem.forEach((elem) => {
+			elem.classList.toggle('questions__list-show');
+			console.log(questionsContent);
+		});
+	});
 });
 
 $(document).ready(function () {
@@ -85,6 +109,7 @@ $(document).ready(function () {
 		// centerMode: true,
 		// focusOnSelect: true
 		infinite: false,
+		draggable: false
 	});
 
 	$('.questions__links').slick({
@@ -92,14 +117,15 @@ $(document).ready(function () {
 		slidesToShow: 4,
 		arrows: false,
 		centerMode: true,
-		focusOnSelect: true
-
+		focusOnSelect: true,
+		draggable: false
 	});
 
 	$('.questions-block').slick({
 		// asNavFor: '.questions__links',
 		slidesToShow: 1,
 		arrows: false,
+		draggable: false
 	});
 });
 

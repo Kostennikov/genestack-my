@@ -1398,9 +1398,11 @@ li {
 }
 
 .analytic {
+
 	overflow: hidden;
 
 	.slider-container {
+		z-index: 1;
 		position: relative;
 		//width: 100%;
 
@@ -1636,11 +1638,10 @@ li {
 		width: 332px;
 		height: 332px;
 		margin: 0 auto;
-		transition: .4s;
+		transition: .5s;
 		transform: rotate(0.5turn) scale(.8);
-		//opacity: 0;
+		opacity: 0;
 		cursor: pointer;
-
 		&__img {
 			position: absolute;
 		}
@@ -1740,7 +1741,7 @@ li {
 			display: flex;
 			flex-direction: column;
 			color: #fff;
-			opacity: .5;
+			opacity: 0;
 			transition: .4s;
 			//&:hover{
 			//	opacity: 1;
@@ -1751,13 +1752,16 @@ li {
 			//	z-index: 6;
 			//}
 		}
-
+		.circle-lines__load{
+			opacity: .5;
+		}
 		.circle-lines__active {
 			opacity: 1;
 			z-index: 7;
 		}
 
 		.circle-lines__text-top {
+			z-index: 7;
 			top: 30px;
 			left: -80px;
 		}
@@ -1777,6 +1781,9 @@ li {
 	.demo-col {
 		display: flex;
 		background-color: #F2F2F2;
+		@media screen and (max-width: 991px){
+			background-color: #023F79;
+		}
 	}
 
 	.circle-demo {
@@ -1968,7 +1975,7 @@ li {
 		.demo-col {
 			display: flex;
 			/* background-color: #F2F2F2; */
-			background-color: #023F79;
+
 		}
 		&-demo {
 			width: 100%;
@@ -1978,7 +1985,7 @@ li {
 		.demo-col {
 			display: flex;
 			/* background-color: #F2F2F2; */
-			background-color: #023F79;
+			//background-color: #023F79;
 		}
 		&-demo {
 			width: 100%;
@@ -2225,7 +2232,6 @@ li {
 	&-block {
 		position: relative;
 		//width: 100%;
-
 		//max-width: 1366px;
 		height: 100%;
 
@@ -2235,7 +2241,7 @@ li {
 			.slick-track {
 				display: flex;
 				justify-content: space-between;
-				align-items: center;
+				align-items: flex-start;
 				outline: none;
 				.slick-current {
 					width: 100%;
@@ -2249,7 +2255,7 @@ li {
 		}
 	}
 	&__list {
-
+		transition: .4s;
 
 
 		&-title {
@@ -2265,10 +2271,8 @@ li {
 			font-style: normal;
 			font-weight: 500;
 			font-size: 24px;
-			//line-height: 30px;
 
 
-			/* GS darkblue */
 
 			color: #023F79;
 
@@ -2276,6 +2280,7 @@ li {
 
 		&-plus{
 			padding-right: 30px;
+
 			&:before {
 				content: "";
 				z-index: 1;
@@ -2323,10 +2328,14 @@ li {
 
 		&-content {
 			display: none;
+			transition: .4s;
+			opacity: 0;
 		}
 
 		&-show {
+			transition: .4s;
 			display: block;
+			opacity: 1;
 		}
 	}
 
