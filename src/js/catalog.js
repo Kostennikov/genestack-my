@@ -73,7 +73,7 @@ $(document).ready(function () {
 		// slidesToScroll: 1,
 		dots: true,
 		arrows: false,
-		// fade: true,
+		fade: true,
 		// centerMode: true,
 		// focusOnSelect: true
 		infinite: false,
