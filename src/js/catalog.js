@@ -45,25 +45,33 @@ circleItems.addEventListener('click', function (event) {
 });
 
 const questionsList = document.querySelector('.questions__list');
-
-const questionsTitle = document.querySelector('.questions__list-title');
+const questionsTitle = document.querySelectorAll('.questions__list-title');
 const questionsContent = document.querySelector('.questions__list-content');
-// questionsTitle.forEach((questionsTitle) => {
+
+questionsTitle.forEach((questionsTitle) => {
+	questionsTitle.classList.add('questions__list-plus');
+});
 questionsList.addEventListener('click', (event) => {
-
-
-
 	let listTitle = event.target.closest('.questions__list-title');
 
+	let elem = listTitle.querySelectorAll('.questions__list-content');
 	listTitle.classList.toggle('questions__list-disable');
 
-	if (listTitle) {
-		questionsContent.classList.toggle('questions__list-show');
-	}
+	elem.forEach((elem) => {
+		elem.classList.toggle('questions__list-show');
+		console.log(questionsContent);
+	});
+
+	// let trigger = event.target.closest('.footer-content__list');
+	// if (!trigger) return;
+	// console.log(trigger);
+	// let element = trigger.querySelectorAll('.footer-content__list-item');
+	//
+	// let elemClose = event.target.closest('.footer-content__list-head');
+	//
+	// elemClose.classList.toggle('item-deactive');
 
 });
-
-
 
 $(document).ready(function () {
 
@@ -78,23 +86,22 @@ $(document).ready(function () {
 		// focusOnSelect: true
 		infinite: false,
 	});
+
+	$('.questions__links').slick({
+		asNavFor: '.questions-block',
+		slidesToShow: 4,
+		arrows: false,
+		centerMode: true,
+		focusOnSelect: true
+
+	});
+
+	$('.questions-block').slick({
+		// asNavFor: '.questions__links',
+		slidesToShow: 1,
+		arrows: false,
+	});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const header = document.querySelector('.header'),
 	logo = document.querySelector('.top-line__logo'),
@@ -131,13 +138,12 @@ function scroll(scrollPosition) {
 	}
 	line.forEach((line) => {
 		if (scrollPosition > topPos || toggleActive) {
-
 			line.classList.add('line-mod');
 		} else {
-
 			line.classList.remove('line-mod');
 		}
 	});
+
 	navItem.forEach(function (navItem) {
 		if (navItem.querySelector('.dropdown')) {
 			navItem.classList.add('nav__item-arrow');
@@ -245,7 +251,7 @@ footerRow.addEventListener('click', (event) => {
 footerHead.forEach((footerHead) => {
 	// if (footerList.childNodes.length > 3){
 
-	let ggg = footerHead.childNodes.length;
+	// let ggg = footerHead.childNodes.length;
 	// console.log(footerHead);
 	// console.log(ggg);
 

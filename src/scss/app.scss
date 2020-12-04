@@ -1475,7 +1475,7 @@ li {
 						//		position: absolute;
 						//		top: 50%;
 						//		left: -20px;
-						//		background: url("/../images/1252.svg") no-repeat;
+						//		background: url("/../images/minus.svg") no-repeat;
 						//		//transform: rotate(90deg);
 						//		width: 14px;
 						//		height: 2px;
@@ -1497,7 +1497,7 @@ li {
 								position: absolute;
 								top: 50%;
 								left: -20px;
-								background: url(../images/1252.svg) no-repeat;
+								background: url(../images/minus.svg) no-repeat;
 								width: 14px;
 								height: 2px;
 								cursor: pointer;
@@ -1527,7 +1527,7 @@ li {
 							position: absolute;
 							top: 25%;
 							left: -20px;
-							background: url(../images/8078.svg) no-repeat;
+							background: url(../images/plus.svg) no-repeat;
 							width: 14px;
 							height: 14px;
 							cursor: pointer;
@@ -2555,7 +2555,7 @@ li {
 
 		&-img {
 			width: 100%;
-			padding-bottom: 20px;
+			margin-bottom: 20px;
 			transition: ease .4s;
 
 		}
@@ -2811,7 +2811,7 @@ li {
 					position: absolute;
 					top: 20px;
 					right: 15px;
-					background: url(../images/8078.svg) no-repeat;
+					background: url(../images/plus.svg) no-repeat;
 					width: 14px;
 					height: 14px;
 					cursor: pointer;
@@ -2825,7 +2825,7 @@ li {
 					position: absolute;
 					top: 26px;
 					right: 15px;
-					background: url(../images/1252.svg) no-repeat;
+					background: url(../images/minus.svg) no-repeat;
 					width: 14px;
 					height: 2px;
 					cursor: pointer;

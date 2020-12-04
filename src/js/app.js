@@ -124,19 +124,24 @@ popup.addEventListener('click', function (event) {
 
 // карусель на bootstrap
 $(document).ready(function () {
+	$('.demo__items').slick({
+		asNavFor: '.demo-images',
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		centerMode: true,
+		focusOnSelect: true
+	});
 
-
-
-	// $('.catalogue-images').slick({
-	// 	// asNavFor: '.catalogue__items',
-	// 	slidesToShow: 1,
-	// 	slidesToScroll: 1,
-	// 	fade: true,
-	// 	dots: false,
-	// 	arrows: false,
-	// 	infinite: false,
-	// 	draggable: false
-	// });
+	$('.demo-images').slick({
+		// asNavFor: '.demo__items',
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		fade: true,
+		dots: false,
+		arrows: false,
+		infinite: false,
+		draggable: false
+	});
 
 	$('.slider').slick({
 		arrows: true,
