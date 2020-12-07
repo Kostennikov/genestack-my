@@ -1,14 +1,12 @@
 //page-2
 
-const circleConstructor = document.querySelector('.circle-constructor');
+const circleConstructor = document.querySelectorAll('.circle-constructor');
 const circleLite = document.querySelector('.circle-lite');
-const circlePath = document.querySelectorAll('.circle-lite__path');
-let circleLines = document.querySelectorAll('.circle-lines__text');
-
-// circleConstructor.addEventListener('click', fff())
-let target = document.querySelector('.circle-constructor');
-
-
+const circlePath = document.querySelectorAll('.circle-constructor__lite-path');
+let circleLines = document.querySelectorAll('.circle-constructor__line');
+let circle = document.querySelector('.circle-items');
+let dataTarget = document.querySelectorAll('[data-target]')
+// let target = document.querySelector('.circle-items');
 const options = {
 	root: null,
 	rootMargin: '0px',
@@ -17,41 +15,83 @@ const options = {
 
 let loadCircle = function (entries, observer) {
 	entries.forEach(entry => {
-		if (entry.isIntersecting && entry.target.classList.contains('circle-constructor')) {
+		if (entry.isIntersecting && entry.target.classList.contains('circle-items')) {
 			entry.target.classList.add('constructor-active');
 			console.log('элемент в области наблюдения');
-			setTimeout(()=>{
-				circleLines.forEach((circleLines)=>{
-					circleLines.classList.add('circle-lines__load');
-				})
-			}, 1000)
+			// setTimeout(() => {
+			// 	circleLines.forEach((circleLines) => {
+			// 		circleLines.classList.add('circle-line__load');
+			// 	});
+			// }, 1000);
 		}
 
 	});
 };
-
 const observer = new IntersectionObserver(loadCircle, options);
 
-observer.observe(target, circleLines);
+observer.observe(circle, circleLines);
 
-
-circleConstructor.addEventListener('click', (event) => {
-	circlePath.forEach((circlePath) => {
-		circlePath.classList.remove('circle-lite__path-active');
-		let target = event.target.closest('.circle-lite__path');
-		console.log(target);
-		target.classList.add('circle-lite__path-active');
-	});
-
+circle.addEventListener('click', (event) => {
+	let target = event.target.closest('.circle-constructor__lite-path');
+	let trigger = event.target.closest('.circle-constructor__line');
+	if (target || trigger) {
+		targetArc(event);
+		// targetLine(event);
+	}
 });
-circleLite.addEventListener('click', (event) => {
-	circleLines.forEach((circleLines) => {
-		circleLines.classList.remove('circle-lines__active');
-		let trigger = event.target.closest('.circle-lines__text');
-		console.log(trigger);
-		trigger.classList.add('circle-lines__active');
+
+function targetArc(event) {
+	console.log('функция targetArc');
+	dataTarget.forEach((dataTarget) => {
+		// let target = event.target.closest('[data-target]');
+		// let trigger = event.target.closest('.circle-constructor__line');
+		dataTarget.classList.remove('path-active');
+		dataTarget.classList.remove('circle-line__active');
+		let top = event.target.closest('[data-top],[data-target]');
+		console.log(top);
+		let left = event.target.closest('[data-left]');
+		let right = event.target.closest('[data-right]');
+		// console.log('target:', target);
+		// let target = event.target;
+		// console.log(target);
+		// console.log(trigger);
+		// event.classList.add('path-active');
+		// event.classList.add('circle-line__active');
+
+		if (top){
+			top.classList.add('path-active');
+			top.classList.add('circle-line__active');
+		} else if (left) {
+			left.classList.add('path-active');
+			left.classList.add('circle-line__active');
+		} else {
+			right.classList.add('path-active');
+			right.classList.add('circle-line__active');
+		}
 	});
-});
+}
+
+
+// function targetArc(event) {
+// 	console.log('функция targetArc');
+// 	circlePath.forEach((circlePath) => {
+// 		let target = event.target.closest('.circle-constructor__lite-path');
+// 		circlePath.classList.remove('path-active');
+// 		console.log('target:', target);
+// 		target.classList.add('path-active');
+// 	});
+// }
+
+// function targetLine(event) {
+// 	console.log('функция targetLine');
+// 	circleLines.forEach((circleLines) => {
+// 		let trigger = event.target.closest('.circle-constructor__line');
+// 		circleLines.classList.remove('circle-line__active');
+// 		console.log('функция targetLine');
+// 		console.log('trigger:', trigger);
+// 		trigger.classList.add('circle-line__active');
+// 	});
+// }
 
 const circleItems = document.querySelector('.circle-demo__items');
 const circleItem = document.querySelectorAll('.circle-demo__item');
@@ -109,7 +149,16 @@ $(document).ready(function () {
 		// centerMode: true,
 		// focusOnSelect: true
 		infinite: false,
-		draggable: false
+		draggable: false,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					dots: false,
+
+				}
+			}
+		]
 	});
 
 	$('.questions__links').slick({
@@ -118,7 +167,8 @@ $(document).ready(function () {
 		arrows: false,
 		centerMode: true,
 		focusOnSelect: true,
-		draggable: false
+		draggable: false,
+
 	});
 
 	$('.questions-block').slick({
