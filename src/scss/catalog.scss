@@ -1640,63 +1640,91 @@ li {
 
 }
 
-.glossary{
-	padding: 90px 0;
-	&__images{
+.glossary {
 
+	padding: 50px 0;
+	border-top: 1px solid #BDBDBD;
+	border-bottom: 1px solid #BDBDBD;
+
+	&__images {
+		margin-left: -20%;
 	}
-	&__items{
+
+	&__items {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		height: 100%;
 	}
-	&__item{
+
+	&__item {
 
 	}
-	&__tag{
+
+	&__tag {
+		padding-bottom: 40px;
+
 		font-family: $Larsseit;
 		font-style: normal;
 		font-weight: 500;
 		font-size: 14px;
 		line-height: 14px;
 
-
 		letter-spacing: 1px;
 		text-transform: uppercase;
+
+
+		color: #262626;
 	}
-	&__title{
-		font-family: $Ivar;
+
+	&__title {
+		font-family: $Larsseit;
 		font-style: normal;
-		font-weigt: normal;
-		font-size: 36px;
-		line-height: 120%;
+		font-weight: normal;
+		font-size: 32px;
+		line-height: 130%;
+
+
+		letter-spacing: -1px;
+
+		color: #0C0C0C;
 
 		padding-bottom: 15px;
 	}
-	&__content{
-		&-text{
+
+	&__content {
+		&-text {
 			@include text-font();
+			color: #0C0C0C;
 		}
 	}
 }
 
 .questions {
-	padding: 20px 0;
+	padding: 100px 0;
 	overflow: hidden;
 
 
 	&__title {
+		padding-bottom: 50px;
+
 		font-family: $Ivar;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 44px;
-		line-height: 120%;
+		font-size: 40px;
+		line-height: 130%;
+
 		text-align: center;
+		letter-spacing: -1px;
+
 		color: #0C0C0C;
 	}
 
 	&__links {
+
+		padding-bottom: 40px;
+
 		font-style: normal;
 		font-weight: 500;
 		font-size: 14px;
@@ -1712,6 +1740,7 @@ li {
 
 		&-item {
 			@include button;
+			//margin-right: 7px;
 			background-image: -webkit-linear-gradient(to left, #023F79 50%, #F2F2F2 50%);
 			background-image: linear-gradient(to left, #023F79 50%, #F2F2F2 50%);
 			border-radius: 0;
@@ -1720,7 +1749,9 @@ li {
 			white-space: nowrap;
 			overflow: hidden;
 			transition: .4s;
-
+			//&:nth-last-child{
+			//	margin-right: 0;
+			//}
 			&:hover {
 				color: #fff;
 			}
@@ -1780,6 +1811,7 @@ li {
 	}
 
 	&__list {
+		padding-bottom: 40px;
 		transition: .4s;
 
 
@@ -1862,8 +1894,13 @@ li {
 		}
 	}
 
-	&-footer__link {
-		text-align: center;
+	&-footer {
+		display: flex;
+		justify-content: center;
+		&-link{
+			text-align: center;
+		}
+
 	}
 
 	@media screen and (max-width: 767px) {

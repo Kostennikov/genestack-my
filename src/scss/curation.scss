@@ -1243,7 +1243,7 @@ li {
 		cursor: pointer;
 		//text-align: center;
 		margin: 0 auto;
-		margin-bottom: 50px;
+		margin-bottom: 100px;
 
 		&-icon {
 			display: inline-block;
@@ -1299,7 +1299,7 @@ li {
 
 .leverage {
 	&__items {
-
+		//margin-bottom: 90px;
 	}
 
 	&__items {
@@ -1315,17 +1315,91 @@ li {
 		@include text-font();
 
 	}
-	.pre-order{
-
-	}
-	&__code{
+	&__images-item{
+		margin-left: -50px;
+		@media screen and (max-width: 767px){
+			width: 100%;
+		}
 
 	}
 }
 
+.pre{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -70px;
+	//padding-top: 90px;
+	height: 477px;
+	background-color: #333333;
+	&__code{
+		display: flex;
+		align-items: center;
+		height: 100%;
+		margin-right: -50px;
+		color: #fff;
+	}
+	&__items {
+		display: flex;
+		align-items: center;
+		margin-bottom: 90px;
+		height: 100%;
+	}
+
+	&__item {
+
+	}
+
+	&__title {
+		@include title-font();
+		color: #fff;
+		padding-bottom: 15px;
+	}
+
+	&__content-text {
+		@include text-font();
+		color: #fff;
+	}
+}
+
+.metadata{
+	display: flex;
+	align-items: center;
+	height: 490px;
+	&__items {
+		//margin-bottom: 90px;
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__title {
+		@include title-font();
+		padding-bottom: 15px;
+	}
+
+	&__content-text {
+		@include text-font();
+
+	}
+	&__images{
+		display: flex;
+		align-items: center;
+		height: 100%;
+		&-item{
+			margin-left: -40px;
+			@media screen and (max-width: 767px){
+				width: 100%;
+			}
+		}
+	}
+}
 
 .video {
-	padding: 30px 0;
+	padding: 90px 0;
 	margin-bottom: 90px;
 	background: #F2F2F2;
 	//margin: -92px auto 0 auto;
@@ -1499,11 +1573,19 @@ li {
 }
 
 .convert{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 	&__items {
-
+		display: flex;
+		align-items: center;
+		text-align: center;
+		height: 100%;
+		padding-bottom: 90px;
 	}
 
-	&__items {
+	&__item {
 
 	}
 
@@ -1516,13 +1598,33 @@ li {
 		@include text-font();
 
 	}
+	&__images{
+		display: flex;
+		align-items: center;
+		height: 100%;
+
+		//&-overflow{
+		//	width: 100%;
+		//	//overflow: scroll;
+		//}
+		&-second{
+			width: 100%;
+		}
+	}
+	&__images-overflow{
+		overflow: scroll;
+	}
+
 }
 
 .glossary {
-	padding: 90px 0;
+
+	padding: 50px 0;
+	border-top: 1px solid #BDBDBD;
+	border-bottom: 1px solid #BDBDBD;
 
 	&__images {
-
+		margin-left: -20%;
 	}
 
 	&__items {
@@ -1530,6 +1632,7 @@ li {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		height: 100%;
 	}
 
 	&__item {
@@ -1537,54 +1640,68 @@ li {
 	}
 
 	&__tag {
+		padding-bottom: 40px;
+
 		font-family: $Larsseit;
 		font-style: normal;
 		font-weight: 500;
 		font-size: 14px;
 		line-height: 14px;
 
-
 		letter-spacing: 1px;
 		text-transform: uppercase;
+
+
+		color: #262626;
 	}
 
 	&__title {
-		font-family: $Ivar;
+		font-family: $Larsseit;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 36px;
-		line-height: 120%;
+		font-size: 32px;
+		line-height: 130%;
+
+
+		letter-spacing: -1px;
+
+		color: #0C0C0C;
 
 		padding-bottom: 15px;
 	}
 
 	&__content {
 		&-text {
-			font-family: $Larsseit;
-			font-style: normal;
-			font-weight: 300;
-			font-size: 18px;
-			line-height: 150%;
+			@include text-font();
+			color: #0C0C0C;
 		}
 	}
 }
 
 .questions {
-	padding: 20px 0;
+	padding: 100px 0;
 	overflow: hidden;
 
 
 	&__title {
+		padding-bottom: 50px;
+
 		font-family: $Ivar;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 44px;
-		line-height: 120%;
+		font-size: 40px;
+		line-height: 130%;
+
 		text-align: center;
+		letter-spacing: -1px;
+
 		color: #0C0C0C;
 	}
 
 	&__links {
+
+		padding-bottom: 40px;
+
 		font-style: normal;
 		font-weight: 500;
 		font-size: 14px;
@@ -1600,6 +1717,7 @@ li {
 
 		&-item {
 			@include button;
+			//margin-right: 7px;
 			background-image: -webkit-linear-gradient(to left, #023F79 50%, #F2F2F2 50%);
 			background-image: linear-gradient(to left, #023F79 50%, #F2F2F2 50%);
 			border-radius: 0;
@@ -1608,7 +1726,9 @@ li {
 			white-space: nowrap;
 			overflow: hidden;
 			transition: .4s;
-
+			//&:nth-last-child{
+			//	margin-right: 0;
+			//}
 			&:hover {
 				color: #fff;
 			}
@@ -1668,6 +1788,7 @@ li {
 	}
 
 	&__list {
+		padding-bottom: 40px;
 		transition: .4s;
 
 
@@ -1750,8 +1871,13 @@ li {
 		}
 	}
 
-	&-footer__link {
-		text-align: center;
+	&-footer {
+		display: flex;
+		justify-content: center;
+		&-link{
+			text-align: center;
+		}
+
 	}
 
 	@media screen and (max-width: 767px) {
