@@ -147,13 +147,6 @@ $(document).ready(function () {
 	$('.slider').slick({
 		arrows: true,
 		dots: true,
-		// slidesToShow: 2,
-		// slidesToScroll: 1,
-		// centerMode: true,
-		// infinite: false,
-		// initialSlide: 1,
-		// autoplay: true,
-		// autoplaySpeed: 5000,
 		focusOnSelect: true,
 		asNavFor: '.wrapper__links',
 
@@ -179,14 +172,6 @@ $(document).ready(function () {
 
 				}
 			},
-			// {
-			// 	breakpoint: 480,
-			// 	settings: {
-			// 		slidesToShow: 1,
-			//
-			// 	}
-			// }
-
 		]
 	});
 
@@ -196,7 +181,6 @@ $(document).ready(function () {
 		dots: false,
 		slidesToShow: 5,
 		focusOnSelect: true,
-
 
 	});
 
@@ -246,22 +230,19 @@ const demoItems = document.querySelector('.demo__items');
 const demoItem = document.querySelectorAll('.demo__item');
 const demoContent = document.querySelectorAll('.demo__content');
 
-let demo = function (){
-	demoItems.addEventListener('click', function (event) {
-		event.preventDefault();
-		let target = event.target.closest('.demo__item');
-		if (!target) return;
-		demoItem.forEach(function (event) {
-			event.classList.remove('demo-active');
-			target.classList.add('demo-active');
-		});
-		demoContent.forEach(function (demoContent) {
-			demoContent.classList.remove('demo-show');
-			target.querySelector('.demo__content').classList.add('demo-show');
-		});
-	});
-}
-
+// demoItems.addEventListener('click', function (event) {
+// 	event.preventDefault();
+// 	let target = event.target.closest('.demo__item');
+// 	if (!target) return;
+// 	demoItem.forEach(function (event) {
+// 		event.classList.remove('demo-active');
+// 		target.classList.add('demo-active');
+// 	});
+// 	demoContent.forEach(function (demoContent) {
+// 		demoContent.classList.remove('demo-show');
+// 		target.querySelector('.demo__content').classList.add('demo-show');
+// 	});
+// });
 
 const footerHead = document.querySelectorAll('.footer-content__list-head');
 const footerRow = document.querySelector('.footer-row');
@@ -300,7 +281,6 @@ footerHead.forEach((footerHead) => {
 	// }
 });
 
-
 //Page Catalog
 //page-2
 
@@ -309,8 +289,8 @@ const circleLite = document.querySelector('.circle-lite');
 const circlePath = document.querySelectorAll('.circle-constructor__lite-path');
 let circleLines = document.querySelectorAll('.circle-constructor__line');
 let circle = document.querySelector('.circle-items');
-let dataLine = document.querySelectorAll('[data-line]')
-let dataActive = document.querySelector('[data-active]')
+let dataLine = document.querySelectorAll('[data-line]');
+let dataActive = document.querySelector('[data-active]');
 // let target = document.querySelector('.circle-items');
 
 const options = {
@@ -325,7 +305,7 @@ let loadCircle = function (entries, observer) {
 			entry.target.classList.add('items-active');
 			console.log('элемент в области наблюдения');
 			setTimeout(() => {
-				dataActive.classList.add('constructor-active')
+				dataActive.classList.add('constructor-active');
 				dataLine.forEach((dataLine) => {
 					dataLine.classList.add('circle-line__load');
 				});
@@ -336,35 +316,35 @@ let loadCircle = function (entries, observer) {
 };
 const observer = new IntersectionObserver(loadCircle, options);
 
-observer.observe(circle, circleLines);
+observer.observe(circle);
 
-circle.addEventListener('click', (event) => {
+(function () {
+	circle.addEventListener('click', (event) => {
 
-	circleConstructor.forEach((circleConstructor) =>{
-		let target = circleConstructor.getAttribute('data-target')
-		let num = circleConstructor.getAttribute('data-num')
-		circleConstructor.classList.remove('constructor-active');
-		let circlePart = event.target.closest('.circle-constructor');
+		circleConstructor.forEach((circleConstructor) => {
+			let target = circleConstructor.getAttribute('data-target');
+			let num = circleConstructor.getAttribute('data-num');
+			circleConstructor.classList.remove('constructor-active');
+			let circlePart = event.target.closest('.circle-constructor');
 
+			circlePart.classList.add('constructor-active');
 
-		circlePart.classList.add('constructor-active');
+			showDemo(target, num);
+			// let trigger = event.target.closest('.circle-constructor__line');
+			// if (target || trigger) {
+			// 	targetArc(event);
+			// 	// targetLine(event);
+			// }
+		});
 
-		showDemo(target, num)
-		// let trigger = event.target.closest('.circle-constructor__line');
-		// if (target || trigger) {
-		// 	targetArc(event);
-		// 	// targetLine(event);
-		// }
-	})
+	});
+})();
 
-});
-function showDemo(target, num){
+function showDemo(target, num) {
 	console.log(circleItem.target, circleItem.num);
 	circleItem.target = target;
 	circleItem.num = num;
 }
-
-
 
 const circleItems = document.querySelector('.circle-demo__items');
 const circleItem = document.querySelectorAll('.circle-demo__item');
