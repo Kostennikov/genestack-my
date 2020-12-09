@@ -118,6 +118,20 @@
   //line-height: 150%;
 
 }
+@mixin title-font{
+  font-family: $Ivar;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 120%;
+}
+@mixin text-font{
+  font-family: $Larsseit;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+}
 
 $path: '../fonts/';
 

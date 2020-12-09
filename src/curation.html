@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ODM Main</title>
+	<title>Curation tools</title>
 	<link rel="stylesheet" href="scss/curation.scss">
 	<meta name="viewport" content="width=device-width">
 	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
@@ -28,10 +28,10 @@
 						<li class="nav__item">Product
 							<ul class="dropdown dropdown-main">
 								<li class="dropdown-main__item-li"><a
-									class="dropdown-main__item" href="#">Why ODM?</a>
+									class="dropdown-main__item" href="odm.html">Why ODM?</a>
 								</li>
 								<li class="dropdown-main__item-li"><a
-									class="dropdown-main__item" href="#">Data catalogue</a>
+									class="dropdown-main__item" href="catalog.html">Data catalogue</a>
 									<ul class="dropdown-main__item-list">
 										<li class="dropdown-main__item-desc">Validate and harmonise your
 											metadata across studies, and ensure it confroms to your data
@@ -165,9 +165,9 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="main-info__links">
-				<a href="main.html" class="main-info__links-item">ODM main</a>
+				<a href="odm.html" class="main-info__links-item">ODM main</a>
 				<a href="catalog.html" class="main-info__links-item">Data catalogue</a>
-				<a href="curation.html" class="main-info__links-item">Curation tools</a>
+				<a href="#" class="main-info__links-item">Curation tools</a>
 				<a href="#" class="main-info__links-item">Consumer Goods</a>
 				<a href="#" class="main-info__links-item">Integration</a>
 			</div>
@@ -189,42 +189,85 @@
 	</div>
 </section>
 
-<section class="search">
-
+<section class="leverage">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-12 col-xl-8 offset-xl-2">
-				<div class="discover">
-					<div class="discover__item">
-						<div class="discover__title">Discover the data you need
+			<div class="col-12 col-md-10 col-xl-4 offset-xl-1">
+				<div class="leverage__items">
+					<div class="leverage__item">
+						<div class="leverage__title">Leverage the potential of both manual and programmatic
+							curation
 						</div>
-						<div class="discover__content">
-							<p class="discover__content-text">
-								A performant GUI search experience lets you find studies using any metadata
-								via an intuitive search bar with controlled-vocabulary powered
-								auto-completion.
+						<div class="leverage__content">
+							<p class="leverage__content-text">
+								Manually curate big datasets using scalable GUI tools such as controlled
+								vocabulary powered auto-complete suggestions for invalid entries, or automate
+								curation via scripts to bulk edit multiple studies.
 							</p>
 						</div>
-						<div class="discover__images">
-							<img class="discover__images-item" srcset="images/curation-search@2x.png 2x"
-							     src="images/curation-search.png"
-							     alt="">
-						</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-md-10 col-xl-6 offset-xl-1">
+				<div class="leverage__images">
+					<img class="leverage__images-item" srcset="images/curation-table@2x.png 2x"
+					     src="images/curation-table.png"
+					     alt="">
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
-				<div class="search__items">
-					<div class="search__item">
-						<div class="search__title">Slice and dice your data
+
+			<div class="col-12 col-md-6 col-xl-6 offset-xl-1 pre-order">
+				<!--				<div class="leverage__images">-->
+				<!--					<img class="leverage__images-item" srcset="images/catalog-data@2x.png 2x"-->
+				<!--					     src="images/catalog-data.png"-->
+				<!--					     alt="">-->
+				<!--				</div>-->
+				<pre class="leverage__code">
+[{
+	"dictionary": "Sex",
+	"genestack_key": "genestack.bio:sex",
+	"raw_keys": ["sex"],
+	"rules": {
+		"m": "male",
+		"f": "female",
+		"?": "unknown",
+	}
+}]
+				</pre>
+			</div>
+
+			<div class="col-12 col-md-6 col-xl-4 offset-xl-2">
+				<div class="leverage__items">
+					<div class="leverage__item">
+						<div class="leverage__title">Leverage the power of programmatic curation
 						</div>
-						<div class="search__content">
-							<p class="search__content-text">
-								Narrow down your search using dynamic filtering of results with
-								metadata-driven facets.
+						<div class="leverage__content">
+							<p class="leverage__content-text">
+								Automate curation via scripts and rules files to edit multiple studies in
+								bulk.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
+				<div class="leverage__items">
+					<div class="leverage__item">
+						<div class="leverage__title">Ensure your metadata integrity
+						</div>
+						<div class="leverage__content">
+							<p class="leverage__content-text">
+								Quickly check your metadata to spot inconsistencies using features such as
+								sample table filtering.
 							</p>
 						</div>
 					</div>
@@ -232,54 +275,14 @@
 			</div>
 
 			<div class="col-12 col-md-7 col-xl-6 offset-xl-1">
-				<div class="search__images">
-					<img class="search__images-item" srcset="images/curation-data@2x.png 2x"
-					     src="images/curation-data.png"
+				<div class="leverage__images">
+					<img class="leverage__images-item" srcset="images/curation-meta@2x.png 2x"
+					     src="images/curation-meta.png"
 					     alt="">
 				</div>
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="col-12 col-md-7 col-xl-6 offset-xl-1">
-				<div class="search__images">
-					<img class="search__images-item" srcset="images/curation-browse@2x.png 2x"
-					     src="images/curation-browse.png"
-					     alt="">
-				</div>
-			</div>
-
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
-				<div class="search__items">
-					<div class="search__item">
-						<div class="search__title">All your data at a glance
-						</div>
-						<div class="search__content">
-							<p class="search__content-text">
-								Quickly obtain an overarching view of all data that are indexed and searchable
-								in your organization.
-							</p>
-						</div>
-
-					</div>
-
-					<div class="search__item">
-						<div class="search__title">Explore studies visually
-						</div>
-						<div class="search__content">
-							<p class="search__content-text">
-								Narrow down the search space and obtain relevant, readily consumable
-								information about studies (e.g. sample count, type of data)
-							</p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</div>
-
 </section>
 
 <section class="video">
@@ -293,8 +296,8 @@
 					<div class="video-content__img">
 						<div class="video-content__img-button"></div>
 						<img class="video-content__img-item"
-						     srcset="images/curation-video@2x.png 2x"
-						     src="images/curation-video.png"
+						     srcset="images/catalog-video@2x.png 2x"
+						     src="images/catalog-video.png"
 						     alt="">
 					</div>
 					<div class="popup" id="popup1">
@@ -326,134 +329,96 @@
 
 </section>
 
-<section class="integrate">
+<section class="convert" >
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
-				<div class="integrate__items">
-
-					<div class="integrate__images">
-						<img src="images/polygon-group.svg" alt="">
-<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106" fill="#023F79">-->
-<!--							<use href="images/sprite.svg#polygon-blue"/>-->
-<!--						</svg>-->
-<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106" fill="#2FACDF">-->
-<!--							<use href="images/sprite.svg#polygon-blue"/>-->
-<!--						</svg>-->
-<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106" fill="#0470BE">-->
-<!--							<use href="images/sprite.svg#polygon-blue"/>-->
-<!--						</svg>-->
-<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-<!--							<use href="images/sprite.svg#polygon-border"/>-->
-<!--						</svg>-->
-<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-<!--							<use href="images/sprite.svg#polygon-transp"/>-->
-<!--						</svg>-->
-<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-<!--							<use href="images/sprite.svg#polygon-transp"/>-->
-<!--						</svg>-->
-<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-<!--							<use href="images/sprite.svg#polygon-transp"/>-->
-<!--						</svg>-->
-					</div>
-
-
-					<div class="integrate__item integrate-title">
-						<div class="integrate__title">Integrate your data with the wider omics landscape
+			<div class="col-12 col-md-10 col-xl-4 offset-xl-1">
+				<div class="convert__items">
+					<div class="convert__item">
+						<div class="convert__title">Take control of your metadata
 						</div>
-						<div class="integrate__content">
-							<p class="integrate__content-text">
-								Bring together your multi-omics data and data from public sources in one
-								place.
+						<div class="convert__content">
+							<p class="convert__content-text">
+								Define your own metadata models using customizable templates to enforce
+								metadata attributes and allowed values, including controlled-vocabulary
+								integration.
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
-				<div class="integrate__items">
-					<div class="integrate__share">
-<!--						<div class="integrate__share-menu">-->
-<!--							<p class="menu-title">Share with group</p>-->
-<!--							<ul class="menu-list">-->
-<!--								<li class="menu-list__header">Curators</li>-->
-<!--&lt;!&ndash;								<li class="menu-list__item">Other</li>&ndash;&gt;-->
-<!--&lt;!&ndash;								<li class="menu-list__item">All</li>&ndash;&gt;-->
-<!--							</ul>-->
-<!--							<div class="menu-buttons">-->
-<!--								<button class="menu-buttons__share">Share</button>-->
-<!--								<button class="menu-buttons__cancel">Cancel</button>-->
-<!--							</div>-->
-
-<!--						</div>-->
-
-						<div class="integrate__images-share">
-							<img class="integrate__images-form" srcset="images/curation-share@2x.png 2x"
-							     src="images/curation-share.png"
-							     alt="">
-							<img class="integrate__images-arc" src="images/curation-arc.svg"
-							     alt="">
+			<div class="col-12 col-md-10 col-xl-4 offset-xl-1">
+				<div class="convert__items">
+					<div class="convert__item">
+						<div class="convert__title">Convert legacy data, ensure new data is right from the
+							start
 						</div>
-					</div>
-
-
-					<div class="integrate__item">
-						<div class="integrate__title">Share data easily and securely
-						</div>
-						<div class="integrate__content">
-							<p class="integrate__content-text">
-								ODM's flexible groups and permissions help teams find and share relevant
-								datasets while fitting in with your organization’s data security model.
+						<div class="convert__content">
+							<p class="convert__content-text">
+								ODM's curation tools mean dealing with legacy data is quick and easy, while
+								new data can be validated on import or created within ODM in compliance with
+								your metadata model.
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 
 		<div class="row">
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
-				<div class="integrate__items">
-					<div class="integrate__item">
-						<div class="integrate__title">Ensure your data has clear context
+			<div class="col-12 col-md-12 col-xl-8 offset-xl-2">
+				<div class="convert__images">
+					<img class="convert__images-item" srcset="images/curation-convert@2x.png 2x"
+					     src="images/curation-convert.png"
+					     alt="">
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="row">
+			<div class="col-12 col-md-6 col-xl-4 offset-xl-1">
+				<div class="convert__items">
+					<div class="convert__item">
+						<div class="convert__title">Curation workflows and publishing to suit your organization
 						</div>
-						<div class="integrate__content">
-							<p class="integrate__content-text">
-								Capture rich metadata and relationships between studies, samples, and
-								multi-omics data.
+						<div class="convert__content">
+							<p class="convert__content-text">
+								ODM's flexible groups and permissions systems are easy to adapt to your data
+								curation workflow. Set up curator users to work on pre-published datasets
+								before sharing them with the wider organization once they are validated.
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-12 col-md-7 col-xl-6 offset-xl-1">
-				<div class="integrate__images">
-					<img class="integrate__images-item" srcset="images/curation-data@2x.png 2x"
-					     src="images/curation-data.png"
+			<div class="col-12 col-md-6 col-xl-6 offset-xl-1">
+				<div class="convert__images">
+					<img class="convert__images-item" srcset="images/curation-convert2@2x.png 2x"
+					     src="images/curation-convert2.png"
 					     alt="">
 				</div>
 			</div>
 		</div>
-
-
 	</div>
-
 </section>
 
 <section class="glossary">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-7 col-xl-6 offset-xl-1">
+			<div class="col-12 col-md-5 col-xl-3 offset-xl-1 glossary-order">
 				<div class="glossary__images">
-					<img class="glossary__images-item" srcset="images/curation-data@2x.png 2x"
-					     src="images/curation-data.png"
+					<img class="glossary__images-item" srcset="images/catalog-glossary@2x.png 2x"
+					     src="images/catalog-glossary.png"
 					     alt="">
 				</div>
 			</div>
 
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
+			<div class="col-12 col-md-6 offset-md-1 col-xl-6 offset-xl-1">
 				<div class="glossary__items">
 					<div class="glossary__item">
 						<div class="glossary__teg">Futured publicaion</div>
@@ -1026,5 +991,8 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src='js/app.js'></script>
+
 </body>
 </html>
+
+
