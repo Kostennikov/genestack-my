@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ODM main</title>
+	<link rel="stylesheet" href="scss/layout.scss">
 	<link rel="stylesheet" href="scss/odm.scss">
 	<meta name="viewport" content="width=device-width">
 	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
@@ -165,27 +166,18 @@
 
 </section>
 
-<section class="main-info">
+<section class="navigation">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="main-info__links">
-				<a href="odm.html" class="main-info__links-item">ODM main</a>
-				<a href="catalog.html" class="main-info__links-item">Data catalogue</a>
-				<a href="curation.html" class="main-info__links-item">Curation tools</a>
-				<a href="#" class="main-info__links-item">Consumer Goods</a>
-				<a href="integration.html" class="main-info__links-item">Integration</a>
-			</div>
+			<nav class="navigation__links">
+				<a href="odm.html" class="navigation__links-item links-active">ODM main</a>
+				<a href="catalog.html" class="navigation__links-item">Data catalogue</a>
+				<a href="curation.html" class="navigation__links-item">Curation tools</a>
+				<a href="#" class="navigation__links-item">Consumer Goods</a>
+				<a href="integration.html" class="navigation__links-item">Integration</a>
+			</nav>
 		</div>
-		<div class="row justify-content-center">
-			<div class="col-10 col-md-8 col-lg-10 ">
-				<div class="main-info__title">Catalogue, curate, search multi-omics data at scale.</div>
-				<div class="main-info__desc">
-					<p class="main-info__desc-text">Big data needs better digital health. ODM makes it easy to
-						integrate, harmonise and search omics data from multiple sources making it findable,
-						accessible, interoperable and reusable. </p>
-				</div>
-			</div>
-		</div>
+
 	</div>
 </section>
 
@@ -193,8 +185,17 @@
 
 	<div class="video-content">
 
-
 		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-10 col-md-8 col-lg-10 ">
+					<div class="video-content__heading">Catalogue, curate, search multi-omics data at scale.</div>
+					<div class="video-content__body">
+						<p class="video-content__body-text">Big data needs better digital health. ODM makes it easy to
+							integrate, harmonise and search omics data from multiple sources making it findable,
+							accessible, interoperable and reusable. </p>
+					</div>
+				</div>
+			</div>
 			<div class="row justify-content-center">
 
 				<div class="col-12 col-md-8 col-lg-6">
@@ -211,17 +212,18 @@
 				</div>
 
 				<div class="col-9 col-md-7 col-lg-5 offset-lg-1 offset-1 block-first">
-					<div class="video-content__info">
-						<div class="video-content__info-title">
+					<div class="video-content__quote">
+						<div class="video-content__quote-title">
 							<p>A collaborative data ecosystem</p>
 						</div>
-						<div class="video-content__info-text">
+						<div class="video-content__quote-text">
 							<p>We have specific APIs for different user classes, such as data managers,
 								bioinformaticians and discovery scientists, so that everybody can harness the
 								power of multi-omics data in their day to day work.</p>
 						</div>
-						<div class="video-content__info-sign">
-							<p class="video-content__info-sign">Amy Tang, PhD, ODM Product Manager</p>
+						<div class="video-content__quote-sign">
+							<span class="video-content__quote-sign_name">Amy Tang,</span>
+							<span class="video-content__quote-sign_job">PhD, ODM Product Manager</span>
 						</div>
 					</div>
 				</div>
@@ -669,7 +671,7 @@
 				</div>
 
 			</div>
-			<div class="col-12 col-md-6 col-lg-5 offset-lg-1 col-xl-5 offset-xl-1">
+			<div class="col-12 col-md-6 col-lg-5 offset-lg-1 col-xl-5 offset-xl-1 cells-container">
 				<div class="cells">
 					<div class="cell cell-1">
 						<svg class="hex" width="155" height="141" viewBox="0 0 155 141" fill="none"
@@ -973,16 +975,16 @@
 				<h1 class="questions__title">We want to answer your questions</h1>
 				<div class="questions__links">
 					<button class="questions__links-item">
-						<span class="questions__links-item_desc">
-<!--							 R&D / Data Manager-->
-							Test
-						</span>
+
+							 R&D / Data Manager
+
+
 					</button>
 					<button class="questions__links-item">
-						<span class="questions__links-item_desc">
-<!--							Bioinformatician / Data Scientist-->
-							Test
-						</span>
+
+							Bioinformatician / Data Scientist
+
+
 					</button>
 					<button class="questions__links-item">IT</button>
 					<button class="questions__links-item">VP / Director</button>

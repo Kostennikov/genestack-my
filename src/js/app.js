@@ -15,10 +15,18 @@ const navList = document.querySelector('.nav__list');
 let scrollPosition = window.scrollY;
 let topPos = header.offsetTop;
 
+window.addEventListener('load', () =>{
+
+})
+
 window.addEventListener('scroll', () => {
 	scrollPosition = window.scrollY;
-
+	let width = document.documentElement.clientWidth;
+	if ( width <= 767){
+		document.querySelector('.cells-container').appendChild(document.querySelector('.cells').cloneNode(true));
+	}
 });
+
 
 function scroll(scrollPosition) {
 	let toggleActive = document.querySelector('.toggle-active');
@@ -124,6 +132,14 @@ popup.addEventListener('click', function (event) {
 
 // карусель на bootstrap
 $(document).ready(function () {
+	// $('.main-info__links').slick({
+	// 	arrows: false,
+	// 	dots: false,
+	// 	slidesToShow: 5,
+	// 	focusOnSelect: true,
+	// 	mobileFirst: true,
+	// 	infinite: false
+	// })
 
 	$('.demo__items').slick({
 		asNavFor: '.demo-images',
@@ -314,6 +330,7 @@ let loadCircle = function (entries, observer) {
 
 	});
 };
+
 const observer = new IntersectionObserver(loadCircle, options);
 
 observer.observe(circle);
@@ -389,3 +406,9 @@ questionsList.forEach((questionsBlock) => {
 		});
 	});
 });
+
+
+
+
+
+
