@@ -15,16 +15,15 @@
 
 <header class="header">
 
-	<div class="container">
+	<div class="container-fluid">
 
-		<div class="row mx-auto top-line">
+		<div class="row top-line">
 
-			<div class="col-2 col-md-2 col-lg-2">
+			<div class="col-2 col-md-1 col-lg-1 col-logo">
 				<a href="#" class="top-line__logo"></a>
-
 			</div>
 
-			<div class="col col-md-4 col-lg-4">
+			<div class="col col-md-4 col-lg-4 offset-lg-1 col-nav">
 				<nav class="top-line__nav">
 					<ul class="nav__list">
 						<li class="nav__item">Product
@@ -110,13 +109,13 @@
 				</nav>
 			</div>
 
-			<div class="col col-md-5 col-lg-3 offset-lg-2">
+			<div class="col col-md-6 col-lg-3 offset-lg-3 col-links">
 				<div class="top-line__links">
 					<div class="row justify-content-end">
-						<div class="col-12 col-md-4">
+						<div class="col-12 col-md-4 col-xl-6">
 							<a href="#" class="top-line__links-text">Sign&nbsp;in</a>
 						</div>
-						<div class="col-12 col-md-8">
+						<div class="col-12 col-md-8 col-xl-6">
 							<a href="#"
 							   class="top-line__links-button button-green">Request&nbsp;a&nbsp;demo</a>
 						</div>
@@ -148,7 +147,7 @@
 	<img class="hero-img2" src="images/hero-right.svg" alt="">
 	<div class="container justify-content-center">
 		<div class="row ">
-			<div class="col-12 col-lg-10 mx-auto">
+			<div class="col-12 col-lg-8 mx-auto">
 				<div class="hero__text">
 					<h1 class="hero__text-title">Multi-omics data management and integration experts</h1>
 				</div>
@@ -179,7 +178,8 @@
 
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-9 col-md-7 col-lg-5 offset-lg-1 offset-2 block-first">
+
+				<div class="col-12 col-md-9 offset-md-1 col-lg-5 offset-lg-1 block-first">
 					<div class="video-content__info">
 						<div class="video-content__info-text">
 							<p>We help our clients accelerate discoveries in biopharmaceutical,
@@ -194,6 +194,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="col-12 col-md-8 col-lg-6">
 					<!--                pop-up-->
 
@@ -202,7 +203,8 @@
 						<div class="video-content__img-button"></div>
 
 						<img class="video-content__img-item"
-						     src="images/477.png"
+						     srcset="images/main-video@2x.png 2x"
+						     src="images/main-video.png"
 						     alt="">
 
 					</div>
@@ -216,6 +218,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -227,19 +230,19 @@
 	</div>
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-12 col-lg-8">
+			<div class="col-12 col-md-10 col-lg-8 col-xl-8">
 				<p class="scope__title">Omics Data Manager — the source of truth for all your multi-omics
 					data</p>
 
 			</div>
 		</div>
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-3 col-lg-3">
+		<div class="row">
+			<div class="col-12 col-md-3 col-lg-3 offset-lg-1 col-xl-2 offset-xl-2">
 				<div class="scope__desc">
 					<img class="scope__desc-logo" src="images/logo-gut.svg" alt="">
 				</div>
 			</div>
-			<div class="col-12 col-md-9 col-lg-6">
+			<div class="col-12 col-md-9 col-lg-6 col-xl-6">
 				<div class="scope__desc">
 					<span class="scope__desc-text">Our flagship product. Helps your organisation create a fair catalog of multi-omics data with tools and APIs for metadata templates, curation and powerful integrative search across data & metadata.</span>
 
@@ -251,6 +254,7 @@
 
 
 		<div class="row justify-content-center">
+
 			<div class="col-12 col-md-5 col-xl-3 offset-xl-1">
 				<div class="demo">
 					<div class="demo__items">
@@ -260,8 +264,8 @@
 								<p class="demo__content-text">
 									Connect all your data in one place. <br> Never lose a dataset again
 								</p>
-								<img class="duplicate-img" srcset="images/1420@2x.png 2x"
-								     src="images/1420.png"
+								<img class="duplicate-img" srcset="images/main-demo-catalogue@2x.png 2x"
+								     src="images/main-demo-catalogue.png"
 								     alt="">
 							</div>
 						</div>
@@ -273,8 +277,8 @@
 									dolor
 									sit amet.
 								</p>
-								<img class="duplicate-img" srcset="images/1420@2x.png 2x"
-								     src="images/1420.png"
+								<img class="duplicate-img" srcset="images/main-demo-curation@2x.png 2x"
+								     src="images/main-demo-curation.png"
 								     alt="">
 							</div>
 						</div>
@@ -286,8 +290,8 @@
 									dolor
 									sit amet.
 								</p>
-								<img class="duplicate-img" srcset="images/1421@2x.png 2x"
-								     src="images/1421.png"
+								<img class="duplicate-img" srcset="images/main-demo-analitic@2x.png 2x"
+								     src="images/main-demo-analitic.png"
 								     alt="">
 							</div>
 						</div>
@@ -312,6 +316,7 @@
 
 			</div>
 
+			<div class="col-xl-1"></div>
 		</div>
 
 	</div>
@@ -357,17 +362,28 @@
 	<div class="services-block">
 		<div class="container services-container">
 
+			<div class="row duplicate-title">
+				<div class="col-12 col-md-12 col-lg-6 col-xl-4">
+					<p class="duplicate-block__title">A complete range <br> of professional
+						services</p>
+				</div>
+			</div>
+
 			<div class="row">
 
+				<div class="col-12 col-md-6 col-lg-6 col-xl-4 left-part">
+					<p class="services-block__title title-order">A complete range <br> of professional
+						services</p>
 
-
-
-				<div class="col-12 col-md-6 col-xl-6">
-					<p class="services-block__title title-order">A complete range <br> of professional services</p>
+					<div class="duplicate-img">
+						<img class="duplicate-img__item" srcset="images/main-services@2x.png 2x"
+						     src="images/main-services.png"
+						     alt="">
+					</div>
 
 					<div class="services__table">
-						<div class="row">
-							<div class="col-6 col-md-12 col-xl-6 offset-xl-0 table-col">
+						<div class="row justify-content-center row-table">
+							<div class="col-6 col-md-12 col-lg-6 col-xl-6 offset-xl-0 table-col">
 								<div class="services__table-item">
 									<svg class="services__table-svg" width="32" height="32"
 									     viewBox="0 0 32 32">
@@ -378,7 +394,7 @@
 								</div>
 							</div>
 
-							<div class="col-6 col-md-12 col-xl-6 offset-xl-0 table-col">
+							<div class="col-6 col-md-12 col-lg-6 col-xl-6 offset-xl-0 table-col">
 								<div class="services__table-item">
 									<svg class="services__table-svg" width="32" height="32"
 									     viewBox="0 0 32 32">
@@ -389,7 +405,7 @@
 								</div>
 							</div>
 
-							<div class="col-6 col-md-12 col-xl-6 offset-xl-0 table-col">
+							<div class="col-6 col-md-12 col-lg-6 col-xl-6 offset-xl-0 table-col">
 								<div class="services__table-item">
 									<svg class="services__table-svg" width="32" height="32"
 									     viewBox="0 0 32 32">
@@ -400,14 +416,14 @@
 								</div>
 							</div>
 
-							<div class="col-6 col-md-12 col-xl-6 offset-xl-0 table-col">
+							<div class="col-6 col-md-12 col-lg-6 col-xl-6 offset-xl-0 table-col">
 								<div class="services__table-item">
 									<svg class="services__table-svg" width="32" height="32"
 									     viewBox="0 0 32 32">
 										<use href="images/sprite.svg#icon4"/>
 									</svg>
 									<!--                <images class="services__table-svg" src="images/icon4.svg" alt="">-->
-									<p class="services__table-desc">Managed service model</p>
+									<p class="services__table-desc">Co-development model</p>
 								</div>
 							</div>
 
@@ -428,13 +444,31 @@
 					</div>
 				</div>
 
-				<div class="col-12 col-md-6 col-xl-6 img-order">
+				<div class="col-12 col-md-6 col-lg-6 col-xl-6 offset-xl-2 img-order">
 					<div class="services-block__img">
-						<img class="services__img-item" srcset="images/5.3@2x.png 2x" src="images/5.3.png"
+						<img class="services__img-item" srcset="images/main-services@2x.png 2x"
+						     src="images/main-services.png"
 						     alt="">
 					</div>
 				</div>
 
+
+			</div>
+
+			<div class="row duplicate-footer">
+				<div class="col-10 col-md-12 col-lg-6 col-xl-4">
+					<div class="duplicate-footer">
+						<p class="duplicate-footer__desc">Our team of bioinformaticians, scientists, software
+							developers and
+							UX/UI
+							designers
+							have decades of experience dissecting customer problems and providing tailored
+							data
+							management
+							solutions. </p>
+						<a href="#" class="duplicate-footer__button">Learn about our service</a>
+					</div>
+				</div>
 			</div>
 
 
@@ -557,8 +591,8 @@
 
 <section class="pharm">
 	<div class="container">
-		<div class="row justify-con   tent-center">
-			<div class="col-9 col-md-8 col-lg-9 offset-2 ">
+		<div class="row">
+			<div class="col-10 offset-2 col-md-9 offset-md-2 col-lg-6 offset-lg-3 ">
 				<div class="pharm__title">Pharmaceutical R&D</div>
 				<div class="pharm__info">
 					<p class="pharm__info-text">Our collaboration with Genestack helps build a single data
@@ -643,7 +677,7 @@
 	<div class="contact-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-md-8 col-lg-5 offset-lg-2">
+				<div class="col-12 col-md-8 col-lg-4 offset-lg-3">
 
 					<div class="contact-content__info">
 						<p class="contact-content__info-title">Contact Genestack</p>
@@ -655,7 +689,7 @@
 			</div>
 			<div class="row">
 
-				<div class="col-12 col-md-4 col-lg-2 offset-lg-2">
+				<div class="col-12 col-md-4 col-lg-1 offset-lg-3">
 					<a href="#" class="contact-content__info-button">Get in touch</a>
 				</div>
 				<div class="col-12 col-md-4 offset-md-4 col-lg-2 offset-lg-4">
@@ -687,10 +721,11 @@
 		<div class="container">
 			<div class="row footer-row">
 
+				<div class="col-12 col-lg col-xl">
 
-				<div class="col-12 col-lg-8">
-					<div class="row">
-						<div class="col-12 col-md">
+					<div class="row justify-content-center">
+
+						<div class="col-12 col-md-2 col-lg col-md-offset-1">
 							<ul class="footer-content__list">
 								<li class="footer-content__list-head">
 									<a class="footer-content__list-link" href="#">
@@ -724,7 +759,8 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-12 col-md">
+
+						<div class="col-12 col-md-2 col-lg col-xl-77">
 							<ul class="footer-content__list">
 								<li class="footer-content__list-head">
 									<a class="footer-content__list-link" href="#">
@@ -739,7 +775,8 @@
 
 							</ul>
 						</div>
-						<div class="col-12 col-md">
+
+						<div class="col-12 col-md-2 col-lg col-xl-77">
 							<ul class="footer-content__list">
 								<li class="footer-content__list-head">
 									<a class="footer-content__list-link" href="#">
@@ -763,7 +800,8 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-12 col-md">
+
+						<div class="col-12 col-md-2 col-lg col-xl-77">
 							<ul class="footer-content__list">
 								<li class="footer-content__list-head">
 									<a class="footer-content__list-link" href="#">
@@ -787,7 +825,8 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-12 col-md">
+
+						<div class="col-12 col-md-2 col-lg col-xl-77">
 							<ul class="footer-content__list">
 								<li class="footer-content__list-head">
 									<a class="footer-content__list-link" href="#">Company</a></li>
@@ -804,8 +843,7 @@
 					</div>
 				</div>
 
-
-				<div class="col-6 col-sm-6 col-md col-lg-2 footer-order">
+				<div class="col-6 col-md-2 offset-md-1 col-md-offset-1 col-lg-1 col-xl-1 footer-order">
 
 					<div class="footer-content__img">
 						<a class="footer-content__img-link" href="#">
@@ -815,12 +853,11 @@
 						</a>
 					</div>
 
-
 				</div>
 
-				<div class="col-6 col-sm-6 col-md-9 col-lg-2">
-					<div class="row">
-						<div class="col-12 col-md col-lg">
+				<div class="col-6 col-lg-2 col-xl-2">
+					<div class="row row-column">
+						<div class="col-12 col-md-4 col-lg">
 							<ul class="footer-content__info">
 								<li class="footer-content__info-contacts">Drop us a line:</li>
 
@@ -833,7 +870,7 @@
 							</ul>
 						</div>
 
-						<div class="col-12 col-md offset-md-2 offset-lg-0 col-lg">
+						<div class="col-12 col-md-4 offset-md-4 offset-lg-0 col-lg">
 							<div class="footer-content__links">
 								<p class="footer-content__info-contacts follow-us">Follow us on:</p>
 								<a href="#" class="footer-content__links-logo">

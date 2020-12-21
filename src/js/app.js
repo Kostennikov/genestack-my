@@ -14,19 +14,17 @@ const navList = document.querySelector('.nav__list');
 
 let scrollPosition = window.scrollY;
 let topPos = header.offsetTop;
+console.log(topPos);
 
-window.addEventListener('load', () =>{
-
-})
+//дублируем блок с ячейками в секции landscapes, для полного заполнения экрана
+const mediaQuery = window.matchMedia('(max-width: 768px)')
+if (mediaQuery.matches) {
+	document.querySelector('.cells-container').appendChild(document.querySelector('.cells').cloneNode(true));
+}
 
 window.addEventListener('scroll', () => {
 	scrollPosition = window.scrollY;
-	let width = document.documentElement.clientWidth;
-	if ( width <= 767){
-		document.querySelector('.cells-container').appendChild(document.querySelector('.cells').cloneNode(true));
-	}
 });
-
 
 function scroll(scrollPosition) {
 	let toggleActive = document.querySelector('.toggle-active');
@@ -100,10 +98,11 @@ navList.addEventListener('click', (event) => {
 const videoBtn = document.querySelector('.video-content__img-button'),
 	popup = document.querySelector('.popup'),
 	popupClose = document.querySelector('.popup-close'),
+	videoItem = document.querySelector('.video-content__img'),
 	popupContent = document.querySelector('.popup-content');
 
-videoBtn.addEventListener('click', function (event) {
-	const element = event.target.closest('.video-content__img-button');
+videoItem.addEventListener('click', function (event) {
+	const element = event.target.closest('.video-content__img');
 	console.log('element:', element);
 	popup.style.display = 'block';
 	page.classList.add('page-hidden');
@@ -121,9 +120,8 @@ videoBtn.addEventListener('click', function (event) {
 	}
 });
 // удаляем pop-up и iframe
-popup.addEventListener('click', function (event) {
+popup.addEventListener('click', function () {
 	if (popupContent) {
-		console.log('privet');
 		popup.style.display = 'none';
 		popup.querySelector('.video__file').remove();
 		page.classList.remove('page-hidden');
@@ -163,7 +161,8 @@ $(document).ready(function () {
 	$('.slider').slick({
 		arrows: true,
 		dots: true,
-		focusOnSelect: true,
+		centerMode: true,
+		// focusOnSelect: true,
 		asNavFor: '.wrapper__links',
 
 		responsive: [
@@ -171,20 +170,20 @@ $(document).ready(function () {
 				breakpoint: 4000,
 				settings: {
 					slidesToShow: 2,
-
+					dots: false
 				}
 			},
 			{
-				breakpoint: 1260,
+				breakpoint: 1259,
 				settings: {
 					slidesToShow: 2,
-
+					// dots: false
 				}
 			},
 			{
 				breakpoint: 992,
 				settings: {
-					slidesToShow: 1,
+					// slidesToShow: 1,
 
 				}
 			},
@@ -246,19 +245,19 @@ const demoItems = document.querySelector('.demo__items');
 const demoItem = document.querySelectorAll('.demo__item');
 const demoContent = document.querySelectorAll('.demo__content');
 
-// demoItems.addEventListener('click', function (event) {
-// 	event.preventDefault();
-// 	let target = event.target.closest('.demo__item');
-// 	if (!target) return;
-// 	demoItem.forEach(function (event) {
-// 		event.classList.remove('demo-active');
-// 		target.classList.add('demo-active');
-// 	});
-// 	demoContent.forEach(function (demoContent) {
-// 		demoContent.classList.remove('demo-show');
-// 		target.querySelector('.demo__content').classList.add('demo-show');
-// 	});
-// });
+demoItems.addEventListener('click', function (event) {
+	event.preventDefault();
+	let target = event.target.closest('.demo__item');
+	if (!target) return;
+	demoItem.forEach(function (event) {
+		event.classList.remove('demo-active');
+		target.classList.add('demo-active');
+	});
+	demoContent.forEach(function (demoContent) {
+		demoContent.classList.remove('demo-show');
+		target.querySelector('.demo__content').classList.add('demo-show');
+	});
+});
 
 const footerHead = document.querySelectorAll('.footer-content__list-head');
 const footerRow = document.querySelector('.footer-row');
@@ -288,7 +287,7 @@ footerRow.addEventListener('click', (event) => {
 footerHead.forEach((footerHead) => {
 	// if (footerList.childNodes.length > 3){
 
-	let ggg = footerHead.childNodes.length;
+	// let ggg = footerHead.childNodes.length;
 	// console.log(footerHead);
 	// console.log(ggg);
 
@@ -315,7 +314,7 @@ const options = {
 	threshold: 0.7
 };
 
-let loadCircle = function (entries, observer) {
+function loadCircle(entries) {
 	entries.forEach(entry => {
 		if (entry.isIntersecting && entry.target.classList.contains('circle-items')) {
 			entry.target.classList.add('items-active');
@@ -332,30 +331,27 @@ let loadCircle = function (entries, observer) {
 };
 
 const observer = new IntersectionObserver(loadCircle, options);
-
 observer.observe(circle);
 
-(function () {
-	circle.addEventListener('click', (event) => {
+circle.addEventListener('click', (event) => {
 
-		circleConstructor.forEach((circleConstructor) => {
-			let target = circleConstructor.getAttribute('data-target');
-			let num = circleConstructor.getAttribute('data-num');
-			circleConstructor.classList.remove('constructor-active');
-			let circlePart = event.target.closest('.circle-constructor');
+	circleConstructor.forEach((circleConstructor) => {
+		let target = circleConstructor.getAttribute('data-target');
+		let num = circleConstructor.getAttribute('data-num');
+		circleConstructor.classList.remove('constructor-active');
+		let circlePart = event.target.closest('.circle-constructor');
 
-			circlePart.classList.add('constructor-active');
+		circlePart.classList.add('constructor-active');
 
-			showDemo(target, num);
-			// let trigger = event.target.closest('.circle-constructor__line');
-			// if (target || trigger) {
-			// 	targetArc(event);
-			// 	// targetLine(event);
-			// }
-		});
-
+		showDemo(target, num);
+		// let trigger = event.target.closest('.circle-constructor__line');
+		// if (target || trigger) {
+		// 	targetArc(event);
+		// 	// targetLine(event);
+		// }
 	});
-})();
+
+});
 
 function showDemo(target, num) {
 	console.log(circleItem.target, circleItem.num);
