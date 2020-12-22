@@ -245,19 +245,19 @@ const demoItems = document.querySelector('.demo__items');
 const demoItem = document.querySelectorAll('.demo__item');
 const demoContent = document.querySelectorAll('.demo__content');
 
-// demoItems.addEventListener('click', function (event) {
-// 	event.preventDefault();
-// 	let target = event.target.closest('.demo__item');
-// 	if (!target) return;
-// 	demoItem.forEach(function (event) {
-// 		event.classList.remove('demo-active');
-// 		target.classList.add('demo-active');
-// 	});
-// 	demoContent.forEach(function (demoContent) {
-// 		demoContent.classList.remove('demo-show');
-// 		target.querySelector('.demo__content').classList.add('demo-show');
-// 	});
-// });
+demoItems.addEventListener('click', function (event) {
+	event.preventDefault();
+	let target = event.target.closest('.demo__item');
+	if (!target) return;
+	demoItem.forEach(function (event) {
+		event.classList.remove('demo-active');
+		target.classList.add('demo-active');
+	});
+	demoContent.forEach(function (demoContent) {
+		demoContent.classList.remove('demo-show');
+		target.querySelector('.demo__content').classList.add('demo-show');
+	});
+});
 
 const footerHead = document.querySelectorAll('.footer-content__list-head');
 const footerRow = document.querySelector('.footer-row');
