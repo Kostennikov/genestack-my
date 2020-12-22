@@ -16,11 +16,7 @@ let scrollPosition = window.scrollY;
 let topPos = header.offsetTop;
 console.log(topPos);
 
-//дублируем блок с ячейками в секции landscapes, для полного заполнения экрана
-const mediaQuery = window.matchMedia('(max-width: 768px)')
-if (mediaQuery.matches) {
-	document.querySelector('.cells-container').appendChild(document.querySelector('.cells').cloneNode(true));
-}
+
 
 window.addEventListener('scroll', () => {
 	scrollPosition = window.scrollY;
@@ -249,19 +245,19 @@ const demoItems = document.querySelector('.demo__items');
 const demoItem = document.querySelectorAll('.demo__item');
 const demoContent = document.querySelectorAll('.demo__content');
 
-demoItems.addEventListener('click', function (event) {
-	event.preventDefault();
-	let target = event.target.closest('.demo__item');
-	if (!target) return;
-	demoItem.forEach(function (event) {
-		event.classList.remove('demo-active');
-		target.classList.add('demo-active');
-	});
-	demoContent.forEach(function (demoContent) {
-		demoContent.classList.remove('demo-show');
-		target.querySelector('.demo__content').classList.add('demo-show');
-	});
-});
+// demoItems.addEventListener('click', function (event) {
+// 	event.preventDefault();
+// 	let target = event.target.closest('.demo__item');
+// 	if (!target) return;
+// 	demoItem.forEach(function (event) {
+// 		event.classList.remove('demo-active');
+// 		target.classList.add('demo-active');
+// 	});
+// 	demoContent.forEach(function (demoContent) {
+// 		demoContent.classList.remove('demo-show');
+// 		target.querySelector('.demo__content').classList.add('demo-show');
+// 	});
+// });
 
 const footerHead = document.querySelectorAll('.footer-content__list-head');
 const footerRow = document.querySelector('.footer-row');
@@ -300,8 +296,15 @@ footerHead.forEach((footerHead) => {
 	// }
 });
 
-//Page Catalog
+//Page ODM
 //page-2
+
+//дублируем блок с ячейками в секции landscapes, для полного заполнения экрана
+const mediaQuery = window.matchMedia('(max-width: 768px)')
+if (mediaQuery.matches) {
+	document.querySelector('.cells-container').appendChild(document.querySelector('.cells').cloneNode(true));
+}
+
 
 const circleConstructor = document.querySelectorAll('.circle-constructor');
 const circleLite = document.querySelector('.circle-lite');
@@ -357,11 +360,11 @@ circle.addEventListener('click', (event) => {
 
 });
 
-function showDemo(target, num) {
-	console.log(circleItem.target, circleItem.num);
-	circleItem.target = target;
-	circleItem.num = num;
-}
+// function showDemo(target, num) {
+// 	console.log(circleItem.target, circleItem.num);
+// 	circleItem.target = target;
+// 	circleItem.num = num;
+// }
 
 const circleItems = document.querySelector('.circle-demo__items');
 const circleItem = document.querySelectorAll('.circle-demo__item');

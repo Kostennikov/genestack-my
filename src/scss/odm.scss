@@ -22,29 +22,32 @@
 	position: relative;
 	z-index: -1;
 	background-color: #000;
-	height: $main-hero-height;
+	height: 600px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
 
-	//@media screen and (max-width: 767px) {
-	//	height: 730px;
-	//}
-	//@media (min-width: 768px) and (max-width: 1259px) {
-	//	height: 450px;
-	//}
+	@media screen and (max-width: 767px) {
+		height: 520px;
+	}
+	@media (min-width: 768px) and (max-width: 1259px) {
+		height: 450px;
+	}
+	@media (min-width: 1260px) and (max-width: 1919px) {
+		height: 600px;
+	}
 
 	&:before {
 		content: '';
 		z-index: 1;
 		position: absolute;
-		height: $main-hero-height;
+		height: $header-height;
 		width: 100%;
 		top: 0;
 		left: 0;
 		background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-		opacity: 0.7;
+		opacity: 0.4;
 
 	}
 
@@ -53,15 +56,22 @@
 		z-index: 0;
 		top: 0;
 		left: 0;
-		//opacity: 0.5;
-		//@media screen and (max-width: 767px) {
-		//	left: -40%;
-		//	top: -30%;
-		//	transform: scale(0.6);
-		//}
-		//@media (min-width: 769px) and (max-width: 1260px) {
-		//	left: -100px;
-		//}
+		//opacity: 0.8;
+		@media screen and (max-width: 767px) {
+			left: -190px;
+			top: -200px;
+			transform: scale(0.5);
+		}
+		@media (min-width: 768px) and (max-width: 1259px) {
+			left: -210px;
+			top: -220px;
+			transform: scale(0.6);
+		}
+		@media (min-width: 1260px) and (max-width: 1919px) {
+			transform: scale(0.65);
+			left: -90px;
+			top: -140px;
+		}
 
 	}
 
@@ -70,20 +80,27 @@
 		z-index: 0;
 		right: 0;
 		bottom: 0;
-		//
-		//@media screen and (max-width: 767px) {
-		//	right: -400px;
-		//	bottom: -155px;
-		//	transform: scale(0.6);
-		//}
-		//@media (min-width: 768px) and (max-width: 1259px) {
-		//	right: -200px;
-		//
-		//}
-	}
+		//opacity: 0.8;
 
+		@media screen and (max-width: 767px) {
+			right: -400px;
+			bottom: -155px;
+			transform: scale(0.6);
+		}
+		@media (min-width: 768px) and (max-width: 1259px) {
+			right: -330px;
+			bottom: -275px;
+			transform: scale(0.6);
+		}
+		@media (min-width: 1260px) and (max-width: 1919px) {
+			transform: scale(0.65);
+			right: -175px;
+			bottom: -65px;
+		}
+	}
 	&__logo {
 		text-align: center;
+		transform: scale(0.7);
 	}
 
 	&__text {
@@ -91,116 +108,117 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
-		//margin-left: 30px;
+		margin-left: -40px;
 		&-title {
 			z-index: 1;
+			text-align: left;
 			font-family: $Larsseit;
 			font-style: normal;
 			font-weight: 500;
-			font-size: 33.8494px;
+			font-size: 34px;
 			line-height: 100%;
-			text-align: left;
 			color: #fff;
 		}
 	}
 
 	@media screen and (max-width: 767px) {
+		&__logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			transform: scale(0.74);
+			padding-bottom: 20px;
+		}
+		.hero__text {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: 0;
+			&-title {
+				font-family: $Larsseit;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 34px;
+				line-height: 100%;
 
+				text-align: center;
+			}
+		}
 		&-img1 {
 			//left: 0;
 			//transform: scale(0.5)
 		}
-		.hero__logo {
-			margin-bottom: 20px;
-		}
-		.hero__text {
-			padding: 0 20px;
 
-			&-title {
-				padding-bottom: 70px;
-				text-align: center;
+		.header-duplicate {
+
+			text-align: center;
+
+			&__text {
+
+				@include button;
+				@include header-button;
+
+				align-self: center;
+				//margin-right: 10px;
+				margin-bottom: 15px;
+				color: #fff;
+				text-decoration: none;
+				//background-color: #000;
+				border: 1px solid #FFFFFF;
+				background-image: linear-gradient(to left, #4F4F4F 50%, #000 50%);
+				cursor: pointer;
+
+				//&:hover {
+				//	//@include nav-item__hover;
+				//	background-position-x: -98%;
+				//}
+			}
+
+			&__button {
+				@include button;
+				@include header-button;
+				background-image: linear-gradient(to left, #084077 50%, #0470BE 50%);
+				font-size: 14px;
+
+
+				&:hover {
+					background-position-x: -98%;
+				}
 			}
 		}
 
+	}
 
+	@media (min-width: 768px) and (max-width: 1259px) {
+		&__text {
+			margin-left: 30px;
+			&-title {
+				font-family: $Larsseit;
+				font-style: normal;
+				font-weight: 500;
+				font-size: 34px;
+				line-height: 100%;
+				margin-bottom: 0;
+
+			}
+		}
+	}
+	@media (min-width: 1260px) and (max-width: 1919px) {
+		&__text {
+
+			&-title {
+				//font-size: 56px;
+
+			}
+		}
 	}
 
 	@media (min-width: 768px) {
-
-	}
-
-}
-
-.navigation  {
-	width: 100%;
-	//padding: 90px 0;
-	text-align: center;
-
-	&__links {
-		display: flex;
-		//justify-content: center;
-		margin-top: -32px;
-
-		margin-bottom: 50px;
-		height: 64px;
-
-		&-item {
-			@include button;
-			display: inline-block;
-			height: 64px;
-			font-style: normal;
-			//font-weight: 500;
-
-			background-color: #fff;
-			color: #000;
-			font-size: 14px;
-			line-height: 64px;
-			border-radius: 1px;
-			text-transform: uppercase;
-			border: none;
-			background-image: -webkit-linear-gradient(right, #0054a6 50%, transparent 50%);
-			background-image: linear-gradient(to left, #0054a6 50%, transparent 50%);
-			//font-size: 1vw;
-			&:hover {
-				color: #fff;
-			}
-
-			//&:before{
-			//  content: "";
-			//  position: absolute;
-			//  z-index: -1;
-			//  background-color: #0054a6;
-			//  bottom: 6px;
-			//  width: 8px;
-			//  height: 8px;
-			//  transform: rotate(45deg);
-			//
-			//}
-		}
-
-	}
-
-	.links-active{
-		background-color: #0054a6;
-		color: #fff;
-
-	}
-
-	@media screen and (max-width: 767px) {
-		&__links {
-			overflow: scroll;
-		}
-		&__desc {
-			&-text {
-				font-style: normal;
-				font-weight: 500;
-				font-size: 20px;
-				line-height: 130%;
-			}
-
+		.header-duplicate {
+			display: none;
 		}
 	}
-
 
 }
 
@@ -211,7 +229,7 @@
 	&-content {
 		&__heading{
 			@include title-small();
-			margin-bottom: 25px;
+			margin-bottom: 16px;
 			text-align: center;
 			font-family: $Ivar;
 			font-style: normal;
@@ -221,7 +239,8 @@
 			text-transform: none;
 		}
 		&__body{
-			padding-bottom: 25px;
+			padding: 0 100px;
+			margin-bottom: 100px;
 			text-align: center;
 			font-style: normal;
 			font-weight: 500;
@@ -234,10 +253,11 @@
 			position: relative;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-around;
-			height: 100%;
 
+			height: 100%;
+			padding: 8px 0;
 			&-title {
+				margin-bottom: 30px;
 				font-style: normal;
 				font-weight: 500;
 				font-size: 18px;
@@ -275,6 +295,7 @@
 		&__img {
 			position: relative;
 			width: 100%;
+			//margin-left: -37px;
 			//height: 100%;
 
 			&-button {
@@ -299,6 +320,7 @@
 				z-index: 1;
 				width: 100%;
 				height: 100%;
+
 			}
 		}
 
@@ -351,7 +373,34 @@
 
 	@media screen and (max-width: 767px) {
 		&-content {
+			&__heading{
 
+				margin-bottom: 16px;
+				text-align: center;
+				font-family: $Ivar;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 36px;
+				line-height: 120%;
+
+				color: #0C0C0C;
+				text-transform: none;
+			}
+			&__body{
+				padding: 0 10px;
+				margin-bottom: 100px;
+				text-align: center;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 20px;
+				line-height: 150%;
+
+			}
+			&__img {
+				&-item{
+					width: 100%;
+				}
+			}
 			&__quote {
 
 				padding-top: 48px;
@@ -361,7 +410,9 @@
 				line-height: 130%;
 
 				&-text {
-
+					font-weight: 500;
+					font-size: 20px;
+					line-height: 130%;
 				}
 
 				&-sign {
@@ -380,8 +431,33 @@
 
 	@media (min-width: 768px) and (max-width: 1260px) {
 		&-content {
+			&__heading{
+				margin-bottom: 16px;
+				text-align: center;
+				font-family: $Ivar;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 36px;
+				line-height: 120%;
+
+				color: #0C0C0C;
+				text-transform: none;
+			}
+			&__body{
+				padding: 0;
+				margin-bottom: 100px;
+				text-align: center;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 20px;
+				line-height: 150%;
+
+			}
 			&__img {
 				margin-bottom: 20px;
+				&-item{
+					min-width: 493px;
+				}
 			}
 		}
 	}
@@ -400,7 +476,7 @@
 .analytic {
 
 	overflow: hidden;
-	padding: 50px 0;
+	padding-top: 50px;
 	.slider-container {
 		z-index: 1;
 		position: relative;
@@ -411,11 +487,11 @@
 
 		.slick-list {
 			overflow: hidden;
-
+			min-height: 500px;
 			.slick-track {
 				display: flex;
-				justify-content: space-between;
-				align-items: center;
+				//justify-content: space-between;
+				//align-items: center;
 
 				.slick-current {
 					width: 100%;
@@ -432,13 +508,14 @@
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
+		padding-top: 33px;
+		//justify-content: space-around;
 		//align-items: center;
 		//padding-bottom: 50px;
 		//margin: 0 -15px;
 
 		&__items {
-
+			margin-bottom: 16px;
 		}
 
 		&__item {
@@ -451,16 +528,29 @@
 			font-size: 36px;
 			line-height: 120%;
 			text-align: left;
+			margin-bottom: 14px;
 		}
-
+		&__content{
+			&-text{
+				font-family: $Larsseit;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 18px;
+				line-height: 150%;
+			}
+		}
 		&__button {
 			&-link {
 				@include button();
 				@include link-style;
+				font-weight: 500;
+				font-size: 16px;
 				margin-bottom: 21px;
 
-				width: 226px;
 				height: 52px;
+				min-width: 298px;
+				border-radius: 40px;
+
 				line-height: 52px;
 			}
 
@@ -496,22 +586,21 @@
 
 	.slick-dots {
 		position: absolute;
-		left: 0;
-		top: 30%;
+		left: 20px;
+		top: 137px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
-		padding-top: 20px;
 
 		li {
 			margin-right: 16px;
 
 			button {
-				width: 8px;
-				height: 8px;
-				border: 1px solid #023F79;
+				width: 12px;
+				height: 12px;
+				border: 2px solid #023F79;
 				border-radius: 50px;
 				font-size: 0;
 				outline: none;
@@ -538,7 +627,15 @@
 			}
 
 			&__title {
+				font-family: $Ivar;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 36px;
+				line-height: 120%;
 
+				text-align: center;
+
+				color: #0C0C0C;
 			}
 
 			&__button {
@@ -586,17 +683,21 @@
 }
 
 .circle {
-
-	margin-bottom: 90px;
+	overflow: hidden;
+	margin-bottom: 100px;
 	//display: flex;
 	//justify-content: center;
 	//align-items: center;
 	&-title {
-		@include title-style;
+		font-family: $Ivar;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 36px;
+		line-height: 120%;
 		color: #fff;
 		text-align: left;
 
-		padding: 0 20px;
+		padding: 16px 60px;
 	}
 
 	&-container {
@@ -834,6 +935,7 @@
 		display: flex;
 		background-color: #F2F2F2;
 		@media screen and (max-width: 991px) {
+			margin-top: -1px;
 			background-color: #023F79;
 		}
 	}
@@ -1197,17 +1299,22 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		//align-items: center;
+		//justify-content: center;
 		width: 100%;
 		height: 100%;
+		padding: 142px 0;
 		//width: 50%;
 		//
 		&__title {
-			@include title-style();
-			text-align: left;
-			padding: 30px 0;
+			font-family: $Ivar;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 36px;
+			line-height: 120%;
 
+			color: #0C0C0C;
+			text-align: left;
 		}
 
 		&__info {
@@ -1225,10 +1332,12 @@
 		//text-align: center;
 
 		&__desc {
-			@include regular-font();
-			//padding: 20px;
-			//text-align: center;
-			margin-bottom: 40px;
+			font-family: $Larsseit;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 26px;
+			margin-bottom: 100px;
 		}
 
 		&__button {
@@ -1239,7 +1348,7 @@
 			border-radius: 30px;
 			line-height: 52px;
 			text-align: center;
-			width: 256px;
+			min-width: 293px;
 			height: 52px;
 			color: #fff;
 			text-decoration: none;
@@ -1417,12 +1526,13 @@
 
 	}
 	@media (min-width: 768px) and (max-width: 1259px) {
+		height: 480px;
 		&-block {
-
+			padding: 0;
 			&__title {
 
-				padding: 15px 0;
-				margin-bottom: 0;
+				padding-top: 100px;
+				margin-bottom: 10px;
 			}
 
 			&__info {
@@ -1432,14 +1542,19 @@
 		}
 		&-footer{
 			&__desc{
-				margin-bottom: 10px;
+				margin-bottom: 50px;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 18px;
+				line-height: 26px;
 			}
 		}
 		.cells {
 			//height: 100vh;
 			min-width: 400px;
-			margin-top: 0;
-			margin-bottom: -67px;
+			margin-top: 35px;
+			margin-bottom: 0;
+			overflow: visible;
 			.cell {
 				position: relative;
 				display: flex;
@@ -1579,7 +1694,9 @@
 			}
 
 		}
-
+		.slick-track{
+			display: flex;
+		}
 		.slick-current {
 			position: relative;
 			background-image: -webkit-linear-gradient(to left, #023F79 50%, #023F79 50%);
