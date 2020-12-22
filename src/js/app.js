@@ -148,7 +148,7 @@ $(document).ready(function () {
 	});
 
 	$('.demo-images').slick({
-		// asNavFor: '.demo__items',
+		asNavFor: '.demo__items',
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		fade: true,
@@ -156,9 +156,12 @@ $(document).ready(function () {
 		arrows: false,
 		infinite: false,
 		draggable: false
+
 	});
 
 	$('.slider').slick({
+		// slidesToScroll: 1,
+		infinite: false,
 		arrows: true,
 		dots: true,
 		centerMode: true,
@@ -169,14 +172,14 @@ $(document).ready(function () {
 			{
 				breakpoint: 4000,
 				settings: {
-					slidesToShow: 2,
-					dots: false
+					// slidesToShow: 2,
+					dots: false,
 				}
 			},
 			{
 				breakpoint: 1259,
 				settings: {
-					slidesToShow: 2,
+					// slidesToShow: 2,
 					// dots: false
 				}
 			},
@@ -184,7 +187,7 @@ $(document).ready(function () {
 				breakpoint: 992,
 				settings: {
 					// slidesToShow: 1,
-
+					arrows: false
 				}
 			},
 		]
@@ -192,6 +195,7 @@ $(document).ready(function () {
 
 	$('.wrapper__links').slick({
 		asNavFor: '.slider',
+		infinite: false,
 		arrows: false,
 		dots: false,
 		slidesToShow: 5,
@@ -328,7 +332,7 @@ function loadCircle(entries) {
 		}
 
 	});
-};
+}
 
 const observer = new IntersectionObserver(loadCircle, options);
 observer.observe(circle);
