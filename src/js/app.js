@@ -13,51 +13,52 @@ const navItem = document.querySelectorAll('.nav__item');
 const dropDown = document.querySelector('.dropdown');
 const navList = document.querySelector('.nav__list');
 
-// let scrollPosition = window.scrollY;
+let scrollPosition = window.scrollY;
+let topPos = header.offsetTop;
+console.log(topPos);
 
-// window.addEventListener('scroll', () => {
-// 	scrollPosition = window.scrollY;
-// });
+window.addEventListener('scroll', () => {
+	scrollPosition = window.scrollY;
+});
 
-// function scroll(scrollPosition) {
-// 	let toggleActive = document.querySelector('.toggle-active');
-// 	scrollPosition = window.scrollY;
-// 	let topPos = header.offsetTop;
-// 	window.requestAnimationFrame(scroll);
-// 	if (scrollPosition > topPos) {
-// 		header.classList.add('header-mod');
-// 		logo.classList.add('logo-mod');
-//
-// 	} else if (scrollPosition <= topPos && !toggleActive) {
-// 		header.classList.remove('header-mod');
-// 		logo.classList.remove('logo-mod');
-//
-// 	}
-// 	line.forEach((line) => {
-// 		if (scrollPosition > topPos || toggleActive) {
-//
-// 			line.classList.add('line-mod');
-// 		} else {
-//
-// 			line.classList.remove('line-mod');
-// 		}
-// 	});
-// 	navItem.forEach(function (navItem) {
-// 		if (navItem.querySelector('.dropdown')) {
-// 			navItem.classList.add('nav__item-arrow');
-// 			if (scrollPosition > topPos) {
-// 				navItem.classList.add('arrow-gray');
-// 			} else {
-// 				navItem.classList.remove('arrow-gray');
-//
-// 			}
-// 		}
-//
-// 	});
-//
-// 	window.requestAnimationFrame(scroll);
-//
-// }
+function scroll(scrollPosition) {
+	let toggleActive = document.querySelector('.toggle-active');
+	scrollPosition = window.scrollY;
+	window.requestAnimationFrame(scroll);
+	if (scrollPosition > topPos) {
+		header.classList.add('header-mod');
+		logo.classList.add('logo-mod');
+
+	} else if (scrollPosition <= topPos && !toggleActive) {
+		header.classList.remove('header-mod');
+		logo.classList.remove('logo-mod');
+
+	}
+	line.forEach((line) => {
+		if (scrollPosition > topPos || toggleActive) {
+
+			line.classList.add('line-mod');
+		} else {
+
+			line.classList.remove('line-mod');
+		}
+	});
+	navItem.forEach(function (navItem) {
+		if (navItem.querySelector('.dropdown')) {
+			navItem.classList.add('nav__item-arrow');
+			if (scrollPosition > topPos) {
+				navItem.classList.add('arrow-gray');
+			} else {
+				navItem.classList.remove('arrow-gray');
+
+			}
+		}
+
+	});
+}
+
+window.requestAnimationFrame(scroll);
+
 
 toggle.addEventListener('click', () => {
 	nav.classList.toggle('toggle-active');

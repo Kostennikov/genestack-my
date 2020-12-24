@@ -11,18 +11,17 @@
 </head>
 <body class="page">
 
-<header class="header">
+<header class="header-mod">
 
 	<div class="container-fluid">
 
-		<div class="row mx-auto top-line">
+		<div class="row top-line">
 
-			<div class="col-2 col-md-2 col-lg-2">
+			<div class="col-2 col-md-1 col-lg-1 col-logo">
 				<a href="#" class="top-line__logo"></a>
-
 			</div>
 
-			<div class="col col-md-4 col-lg-4">
+			<div class="col col-md-4 col-lg-4 offset-lg-1 col-nav">
 				<nav class="top-line__nav">
 					<ul class="nav__list">
 						<li class="nav__item">Product
@@ -108,13 +107,13 @@
 				</nav>
 			</div>
 
-			<div class="col col-md-5 col-lg-3 offset-lg-2">
+			<div class="col col-md-6 col-lg-3 offset-lg-3 col-links">
 				<div class="top-line__links">
 					<div class="row justify-content-end">
-						<div class="col-12 col-md-4">
+						<div class="col-12 col-md-4 col-xl-6">
 							<a href="#" class="top-line__links-text">Sign&nbsp;in</a>
 						</div>
-						<div class="col-12 col-md-8">
+						<div class="col-12 col-md-8 col-xl-6">
 							<a href="#"
 							   class="top-line__links-button button-green">Request&nbsp;a&nbsp;demo</a>
 						</div>
@@ -129,10 +128,12 @@
 			</div>
 
 			<div class="col-1 col-md-1 menu-toggle">
-				<input class="checkbox" type="checkbox">
-				<span class="line"></span>
-				<span class="line"></span>
-				<span class="line"></span>
+				<label class="menu-toggle__label" for="checkbox">
+					<input class="checkbox" id="checkbox" type="checkbox">
+					<span class="line"></span>
+					<span class="line"></span>
+					<span class="line"></span>
+				</label>
 			</div>
 
 		</div>
@@ -145,16 +146,16 @@
 	<!--	</object>-->
 	<!--	<object class="hero-img2" type="image/svg+xml" data="images/hero-right.svg">-->
 	<!--	</object>-->
-	<img class="hero-img1" src="images/hero-left.svg" alt="">
-	<img class="hero-img2" src="images/hero-right.svg" alt="">
-	<div class="container justify-content-center">
-		<div class="row mx-auto">
-			<div class="col-12 col-md-5 offset-md-1 col-lg-4 offset-lg-2">
+	<img class="hero-img1" src="images/odm-hero-left.svg" alt="">
+	<img class="hero-img2" src="images/odm-hero-right.svg" alt="">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8 col-md-4 col-lg-4">
 				<div class="hero__logo">
 					<img class="hero__logo-img" src="images/logo-gut-2.svg" alt="">
 				</div>
 			</div>
-			<div class="col-12 col-md-4 col-lg-3 offset-lg-0 offset-xl-0">
+			<div class="col-8 col-md-4 col-lg-2 offset-lg-0 offset-xl-0">
 				<div class="hero__text">
 					<h1 class="hero__text-title">Omics Data Manager</h1>
 				</div>
@@ -169,8 +170,8 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<nav class="navigation__links">
-				<a href="odm.html" class="navigation__links-item">ODM main</a>
-				<a href="catalog.html" class="navigation__links-item  links-active">Data catalogue</a>
+				<a href="odm.html" class="navigation__links-item links-active">ODM main</a>
+				<a href="catalog.html" class="navigation__links-item">Data catalogue</a>
 				<a href="curation.html" class="navigation__links-item">Curation tools</a>
 				<a href="#" class="navigation__links-item">Consumer Goods</a>
 				<a href="integration.html" class="navigation__links-item">Integration</a>
@@ -183,13 +184,11 @@
 <section class="main-info">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-10 col-md-8 col-lg-10">
-				<div class="main-info__heading">Take the pain out of manual curation</div>
+			<div class="col-12 col-md-10 col-lg-10">
+				<div class="main-info__heading">Connect all your multi-omics data in one place</div>
 				<div class="main-info__body">
-					<p class="main-info__body-text">Quickly and easily curate big datasets using
-						scalable GUI
-						tools such as controlled vocabulary powered auto-complete suggestions for invalid
-						entries.</p>
+					<p class="main-info__body-text">Access study, samples, data files and associated metadata
+						for multiple types of omics</p>
 				</div>
 			</div>
 		</div>
@@ -213,30 +212,33 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-md-12 col-xl-8 offset-xl-2">
-				<div class="discover">
-					<div class="discover__item">
-						<div class="discover__title">Discover the data you need
-						</div>
-						<div class="discover__content">
-							<p class="discover__content-text">
-								A performant GUI search experience lets you find studies using any metadata
-								via an intuitive search bar with controlled-vocabulary powered
-								auto-completion.
-							</p>
-						</div>
-						<div class="discover__images">
-							<img class="discover__images-item" srcset="images/catalog-search@2x.png 2x"
-							     src="images/catalog-search.png"
-							     alt="">
-						</div>
+			<div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<div class="discover__item">
+					<div class="discover__title">Discover the data you need
+					</div>
+					<div class="discover__content">
+						<p class="discover__content-text">
+							A performant GUI search experience lets you find studies using any metadata
+							via an intuitive search bar with controlled-vocabulary powered
+							auto-completion.
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
+				<div class="discover__images">
+					<img class="discover__images-item" srcset="images/catalog-search@2x.png 2x"
+					     src="images/catalog-search.png"
+					     alt="">
+				</div>
+			</div>
+		</div>
+
 
 		<div class="row">
-			<div class="col-12 col-md-5 col-lg-5 col-xl-4 offset-xl-1">
+			<div class="col-12 col-md-5 col-lg-4 offset-lg-1">
 				<div class="search__items">
 					<div class="search__item">
 						<div class="search__title">Slice and dice your data
@@ -251,8 +253,8 @@
 				</div>
 			</div>
 
-			<div class="col-12 col-md-7 col-lg-7 col-xl-6 offset-xl-1">
-				<div class="search__items">
+			<div class="col-12 col-md-7 col-lg-6 offset-lg-1">
+				<div class="search__items search__items-second">
 					<div class="search__images">
 						<img class="search__images-item" srcset="images/catalog-data@2x.png 2x"
 						     src="images/catalog-data.png"
@@ -263,8 +265,18 @@
 		</div>
 
 		<div class="row">
-			<div class="col-12 col-md-7 col-xl-6 offset-xl-1">
-				<div class="search__items">
+			<div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-0">
+				<div class="search__items search__items-third">
+					<div class="search__item search__item-duplicate">
+						<div class="search__title">All your data at a glance
+						</div>
+						<div class="search__content">
+							<p class="search__content-text">
+								Quickly obtain an overarching view of all data that are indexed and searchable
+								in your organization.
+							</p>
+						</div>
+					</div>
 					<div class="search__images">
 						<img class="search__images-item" srcset="images/catalog-browse@2x.png 2x"
 						     src="images/catalog-browse.png"
@@ -273,9 +285,9 @@
 				</div>
 			</div>
 
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
-				<div class="search__items">
-					<div class="search__item">
+			<div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-1">
+				<div class="search__items search__items-third">
+					<div class="search__item search__item-main">
 						<div class="search__title">All your data at a glance
 						</div>
 						<div class="search__content">
@@ -310,77 +322,64 @@
 
 	<div class="video-content">
 
-		<div class="container">
+		<div class="container video-container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-10 col-lg-10 ">
+					<div class="video-content__heading">
+					</div>
+					<div class="video-content__body">
+						<p class="video-content__body-footer">Curation tool advantages</p>
+					</div>
+				</div>
+			</div>
 			<div class="row justify-content-center">
 
-				<div class="col-12 col-md-8 col-lg-6">
+				<div class="col-12 col-md-8 col-lg-4">
 					<div class="video-content__img">
 						<div class="video-content__img-button"></div>
 						<img class="video-content__img-item"
 						     srcset="images/catalog-video@2x.png 2x"
 						     src="images/catalog-video.png"
 						     alt="">
-					</div>
-					<div class="popup" id="popup1">
-						<div class="popup-content">
+
+						<div class="popup" id="popup1">
+							<div class="popup-content">
+							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-9 col-md-7 col-lg-5 offset-lg-1 offset-1 block-first">
-					<div class="video-content__info">
-						<div class="video-content__info-title">
-							<p>A collaborative data ecosystem</p>
+				<div class="col-9 col-md-8 offset-md-0 col-lg-5 offset-lg-2 offset-2 block-first">
+					<div class="video-content__quote">
+						<div class="video-content__quote-title">
+							<p>Curation tool advantages</p>
 						</div>
-						<div class="video-content__info-text">
+						<div class="video-content__quote-text">
 							<p>We have specific APIs for different user classes, such as data managers,
-								bioinformaticians and discovery scientists, so that everybody can harness the
+								bioinformaticians and discovery <br> scientists, so that everybody can
+								harness the
 								power of multi-omics data in their day to day work.</p>
 						</div>
-						<div class="video-content__info-sign">
-							<p class="video-content__info-sign">Amy Tang, PhD, ODM Product Manager</p>
+						<div class="video-content__quote-sign">
+							<span class="video-content__quote-sign_name">Vasiliy Bout,</span>
+							<span class="video-content__quote-sign_job">Chief Technology Officer</span>
 						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
-
 	</div>
-
 </section>
 
 <section class="integrate">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-12 col-md-10 col-xl-4 offset-xl-1">
+			<div class="col-12 col-md-10 col-lg-4 offset-lg-1">
 				<div class="integrate__items">
 
 					<div class="integrate__images">
-						<img src="images/polygon-group.svg" alt="">
-						<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106" fill="#023F79">-->
-						<!--							<use href="images/sprite.svg#polygon-blue"/>-->
-						<!--						</svg>-->
-						<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106" fill="#2FACDF">-->
-						<!--							<use href="images/sprite.svg#polygon-blue"/>-->
-						<!--						</svg>-->
-						<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106" fill="#0470BE">-->
-						<!--							<use href="images/sprite.svg#polygon-blue"/>-->
-						<!--						</svg>-->
-						<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-						<!--							<use href="images/sprite.svg#polygon-border"/>-->
-						<!--						</svg>-->
-						<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-						<!--							<use href="images/sprite.svg#polygon-transp"/>-->
-						<!--						</svg>-->
-						<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-						<!--							<use href="images/sprite.svg#polygon-transp"/>-->
-						<!--						</svg>-->
-						<!--						<svg class="integrate__images-item" width="118" height="106" viewBox="0 0 118 106">-->
-						<!--							<use href="images/sprite.svg#polygon-transp"/>-->
-						<!--						</svg>-->
+						<img class="integrate__images-polygon" src="images/polygon-group.svg" alt="">
 					</div>
-
 
 					<div class="integrate__item integrate-title">
 						<p class="integrate__title">Integrate your data with the wider omics landscape
@@ -395,23 +394,11 @@
 				</div>
 			</div>
 
-			<div class="col-12 col-md-10 col-xl-4 offset-xl-1">
+			<div class="col-lg-2"></div>
+
+			<div class="col-12 col-md-10 col-lg-4">
 				<div class="integrate__items">
 					<div class="integrate__share">
-						<!--						<div class="integrate__share-menu">-->
-						<!--							<p class="menu-title">Share with group</p>-->
-						<!--							<ul class="menu-list">-->
-						<!--								<li class="menu-list__header">Curators</li>-->
-						<!--&lt;!&ndash;								<li class="menu-list__item">Other</li>&ndash;&gt;-->
-						<!--&lt;!&ndash;								<li class="menu-list__item">All</li>&ndash;&gt;-->
-						<!--							</ul>-->
-						<!--							<div class="menu-buttons">-->
-						<!--								<button class="menu-buttons__share">Share</button>-->
-						<!--								<button class="menu-buttons__cancel">Cancel</button>-->
-						<!--							</div>-->
-
-						<!--						</div>-->
-
 						<div class="integrate__images-share">
 							<img class="integrate__images-form" srcset="images/catalog-share@2x.png 2x"
 							     src="images/catalog-share.png"
@@ -434,11 +421,12 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-lg-1"></div>
 		</div>
 
 		<div class="row">
-			<div class="col-12 col-md-5 col-xl-4 offset-xl-1">
-				<div class="integrate__items">
+			<div class="col-12 col-md-5 col-lg-4 offset-lg-1">
+				<div class="integrate__items integrate-second">
 					<div class="integrate__item">
 						<p class="integrate__title">Ensure your data has clear context
 						</p>
@@ -452,11 +440,11 @@
 				</div>
 			</div>
 
-			<div class="col-12 col-md-7 col-xl-6 offset-xl-1">
-				<div class="integrate__items">
+			<div class="col-12 col-md-7 col-lg-6 offset-lg-1">
+				<div class="integrate__items integrate-second">
 					<div class="integrate__images">
-						<img class="integrate__images-item" srcset="images/catalog-data@2x.png 2x"
-						     src="images/catalog-data.png"
+						<img class="integrate__images-item" srcset="images/catalog-context@2x.png 2x"
+						     src="images/catalog-context.png"
 						     alt="">
 					</div>
 				</div>
@@ -469,10 +457,13 @@
 </section>
 
 <section class="glossary">
-	<div class="container">
+	<div class="container glossary-container">
 		<div class="row">
-			<div class="col-12 col-md-5 col-xl-3 offset-xl-1 glossary-order">
-				<div class="glossary__items">
+			<div class="col-12">
+				<div class="glossary__tag glossary__tag-duplicate">Futured publicaion</div>
+			</div>
+			<div class="col-12 col-md-5 col-lg-3 offset-lg-1 glossary-order">
+				<div class="glossary__items glossary__items-image">
 					<div class="glossary__images">
 						<img class="glossary__images-item" srcset="images/catalog-glossary@2x.png 2x"
 						     src="images/catalog-glossary.png"
@@ -481,7 +472,7 @@
 				</div>
 			</div>
 
-			<div class="col-12 col-md-6 offset-md-1 col-xl-6 offset-xl-1">
+			<div class="col-12 col-md-6 offset-md-1 col-lg-6 offset-lg-1">
 				<div class="glossary__items">
 					<div class="glossary__item">
 						<div class="glossary__tag">Futured publicaion</div>
