@@ -12,18 +12,17 @@
 </head>
 <body class="page">
 
-<header class="header">
+<header class="header-mod">
 
 	<div class="container-fluid">
 
-		<div class="row mx-auto top-line">
+		<div class="row top-line">
 
-			<div class="col-2 col-md-2 col-lg-2">
+			<div class="col-2 col-md-1 col-lg-1 col-logo">
 				<a href="#" class="top-line__logo"></a>
-
 			</div>
 
-			<div class="col col-md-4 col-lg-4">
+			<div class="col col-md-4 col-lg-4 offset-lg-1 col-nav">
 				<nav class="top-line__nav">
 					<ul class="nav__list">
 						<li class="nav__item">Product
@@ -109,13 +108,13 @@
 				</nav>
 			</div>
 
-			<div class="col col-md-5 col-lg-3 offset-lg-2">
+			<div class="col col-md-6 col-lg-3 offset-lg-3 col-links">
 				<div class="top-line__links">
 					<div class="row justify-content-end">
-						<div class="col-12 col-md-4">
+						<div class="col-12 col-md-4 col-xl-6">
 							<a href="#" class="top-line__links-text">Sign&nbsp;in</a>
 						</div>
-						<div class="col-12 col-md-8">
+						<div class="col-12 col-md-8 col-xl-6">
 							<a href="#"
 							   class="top-line__links-button button-green">Request&nbsp;a&nbsp;demo</a>
 						</div>
@@ -130,10 +129,12 @@
 			</div>
 
 			<div class="col-1 col-md-1 menu-toggle">
-				<input class="checkbox" type="checkbox">
-				<span class="line"></span>
-				<span class="line"></span>
-				<span class="line"></span>
+				<label class="menu-toggle__label" for="checkbox">
+					<input class="checkbox" id="checkbox" type="checkbox">
+					<span class="line"></span>
+					<span class="line"></span>
+					<span class="line"></span>
+				</label>
 			</div>
 
 		</div>
@@ -146,16 +147,16 @@
 	<!--	</object>-->
 	<!--	<object class="hero-img2" type="image/svg+xml" data="images/hero-right.svg">-->
 	<!--	</object>-->
-	<img class="hero-img1" src="images/hero-left.svg" alt="">
-	<img class="hero-img2" src="images/hero-right.svg" alt="">
-	<div class="container justify-content-center">
-		<div class="row mx-auto">
-			<div class="col-12 col-md-5 offset-md-1 col-lg-4 offset-lg-2">
+	<img class="hero-img1" src="images/odm-hero-left.svg" alt="">
+	<img class="hero-img2" src="images/odm-hero-right.svg" alt="">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8 col-md-4 col-lg-4">
 				<div class="hero__logo">
 					<img class="hero__logo-img" src="images/logo-gut-2.svg" alt="">
 				</div>
 			</div>
-			<div class="col-12 col-md-4 col-lg-3 offset-lg-0 offset-xl-0">
+			<div class="col-8 col-md-4 col-lg-2 offset-lg-0 offset-xl-0">
 				<div class="hero__text">
 					<h1 class="hero__text-title">Omics Data Manager</h1>
 				</div>
@@ -166,33 +167,13 @@
 
 </section>
 
-<!--<section class="main-info">-->
-<!--	<div class="container">-->
-<!--		<div class="row justify-content-center">-->
-<!--			<div class="col-10 col-md-8 col-lg-10">-->
-<!--				<div class="main-info__title">Take the pain out of manual curation</div>-->
-<!--				<div class="main-info__desc">-->
-<!--					<p class="main-info__desc-text">Quickly and easily curate big datasets using scalable GUI-->
-<!--						tools such as controlled vocabulary powered auto-complete suggestions for invalid-->
-<!--						entries.</p>-->
-<!--				</div>-->
-<!--				<div class="main-info__button">-->
-<!--					<div class="main-info__button-icon"></div>-->
-<!--					<a class="main-info__button-link" href="#">Watch overview</a>-->
-<!--				</div>-->
-
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-<!--</section>-->
-
 <section class="navigation">
 	<div class="container">
 		<div class="row justify-content-center">
 			<nav class="navigation__links">
-				<a href="odm.html" class="navigation__links-item">ODM main</a>
+				<a href="odm.html" class="navigation__links-item links-active">ODM main</a>
 				<a href="catalog.html" class="navigation__links-item">Data catalogue</a>
-				<a href="curation.html" class="navigation__links-item links-active">Curation tools</a>
+				<a href="curation.html" class="navigation__links-item">Curation tools</a>
 				<a href="#" class="navigation__links-item">Consumer Goods</a>
 				<a href="integration.html" class="navigation__links-item">Integration</a>
 			</nav>
@@ -204,11 +185,10 @@
 <section class="main-info">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-10 col-md-8 col-lg-10">
+			<div class="col-12 col-md-10 col-lg-10">
 				<div class="main-info__heading">Take the pain out of manual curation</div>
 				<div class="main-info__body">
-					<p class="main-info__body-text">Quickly and easily curate big datasets using
-						scalable GUI
+					<p class="main-info__body-text">Quickly and easily curate big datasets using scalable GUI
 						tools such as controlled vocabulary powered auto-complete suggestions for invalid
 						entries.</p>
 				</div>
@@ -269,12 +249,11 @@
 <section class="pre">
 	<div class="container">
 		<div class="row">
-
 			<div class="col-12 col-md-6 col-lg-5 pre-order">
 				<div class="pre__items">
 					<div class="pre__images">
-						<img class="pre__images-item" srcset="images/curation-pre@2x.png 2x"
-						     src="images/curation-pre.png"
+						<img class="pre__images-item" srcset="images/pre-image@2x.png 2x"
+						     src="images/pre-image.png"
 						     alt="">
 					</div>
 				</div>
@@ -406,7 +385,7 @@
 
 			<div class="col-lg-2"></div>
 
-			<div class="col-12 col-md-10 offset-md-1 col-lg-4">
+			<div class="col-12 col-md-10 offset-md-1 col-lg-4 convert-main">
 				<div class="convert__items">
 					<div class="convert__item">
 						<div class="convert__title">Convert legacy data, ensure new data is right from the
@@ -436,7 +415,22 @@
 						     alt="">
 					</div>
 				</div>
-
+			</div>
+			<div class="col-12 convert-duplicate">
+				<div class="convert__items">
+					<div class="convert__item">
+						<div class="convert__title">Convert legacy data, ensure new data is right from the
+							start
+						</div>
+						<div class="convert__content">
+							<p class="convert__content-text">
+								ODM's curation tools mean dealing with legacy data is quick and easy, while
+								new data can be validated on import or created within ODM in compliance with
+								your metadata model.
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 
 
