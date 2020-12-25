@@ -12,18 +12,17 @@
 </head>
 <body class="page">
 
-<header class="header">
+<header class="header-mod">
 
 	<div class="container-fluid">
 
-		<div class="row mx-auto top-line">
+		<div class="row top-line">
 
-			<div class="col-2 col-md-2 col-lg-2">
+			<div class="col-2 col-md-1 col-lg-1 col-logo">
 				<a href="#" class="top-line__logo"></a>
-
 			</div>
 
-			<div class="col col-md-4 col-lg-4">
+			<div class="col col-md-4 col-lg-4 offset-lg-1 col-nav">
 				<nav class="top-line__nav">
 					<ul class="nav__list">
 						<li class="nav__item">Product
@@ -62,7 +61,7 @@
 									</a>
 								</li>
 								<li class="dropdown-main__item-li">
-									<a class="dropdown-main__item" href="#">Integration
+									<a class="dropdown-main__item" href="integration.html">Integration
 										<ul class="dropdown-main__item-list">
 											<li class="dropdown-main__item-desc">Validate and harmonise your
 												metadata across studies, and ensure it confroms to your data
@@ -109,13 +108,13 @@
 				</nav>
 			</div>
 
-			<div class="col col-md-5 col-lg-3 offset-lg-2">
+			<div class="col col-md-6 col-lg-3 offset-lg-3 col-links">
 				<div class="top-line__links">
 					<div class="row justify-content-end">
-						<div class="col-12 col-md-4">
+						<div class="col-12 col-md-4 col-xl-6">
 							<a href="#" class="top-line__links-text">Sign&nbsp;in</a>
 						</div>
-						<div class="col-12 col-md-8">
+						<div class="col-12 col-md-8 col-xl-6">
 							<a href="#"
 							   class="top-line__links-button button-green">Request&nbsp;a&nbsp;demo</a>
 						</div>
@@ -130,10 +129,12 @@
 			</div>
 
 			<div class="col-1 col-md-1 menu-toggle">
-				<input class="checkbox" type="checkbox">
-				<span class="line"></span>
-				<span class="line"></span>
-				<span class="line"></span>
+				<label class="menu-toggle__label" for="checkbox">
+					<input class="checkbox" id="checkbox" type="checkbox">
+					<span class="line"></span>
+					<span class="line"></span>
+					<span class="line"></span>
+				</label>
 			</div>
 
 		</div>
@@ -146,16 +147,16 @@
 	<!--	</object>-->
 	<!--	<object class="hero-img2" type="image/svg+xml" data="images/hero-right.svg">-->
 	<!--	</object>-->
-	<img class="hero-img1" src="images/hero-left.svg" alt="">
-	<img class="hero-img2" src="images/hero-right.svg" alt="">
-	<div class="container justify-content-center">
-		<div class="row mx-auto">
-			<div class="col-12 col-md-5 offset-md-1 col-lg-4 offset-lg-2">
+	<img class="hero-img1" src="images/odm-hero-left.svg" alt="">
+	<img class="hero-img2" src="images/odm-hero-right.svg" alt="">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8 col-md-4 col-lg-4">
 				<div class="hero__logo">
 					<img class="hero__logo-img" src="images/logo-gut-2.svg" alt="">
 				</div>
 			</div>
-			<div class="col-12 col-md-4 col-lg-3 offset-lg-0 offset-xl-0">
+			<div class="col-8 col-md-4 col-lg-2 offset-lg-0 offset-xl-0">
 				<div class="hero__text">
 					<h1 class="hero__text-title">Omics Data Manager</h1>
 				</div>
@@ -184,7 +185,7 @@
 <section class="main-info">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-10 col-md-8 col-lg-10">
+			<div class="col-10 col-md-10 col-lg-8">
 				<div class="main-info__heading">Seamless integration within your IT architecture & data
 					workflow
 				</div>
@@ -200,85 +201,87 @@
 		<div class="row justify-content-center">
 			<div class="col-12">
 				<div class="shema-content">
-<!--					<img class="shema-content__image" src="images/integration-shema-main.svg" alt="">-->
+<!--					<img class="shema-content__image"-->
+<!--					     srcset="images/integration-shema@2x.png 2x"-->
+<!--					     src="images/integration-shema.png" alt="">-->
 
-					<div class="shema-content__circle shema-content__circle-first">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Ontologies, controlled vocabularies</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle1.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__circle shema-content__circle-second">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Users, groups, permissions</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle2.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__circle shema-content__circle-third">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Metadata storage</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle3.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__circle shema-content__circle-fourth">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Data storage</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle4.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__circle shema-content__circle-fifth">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Public data</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle5.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__circle shema-content__circle-sixth">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Public data</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle6.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__circle shema-content__circle-seventh">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Exteral tools</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle7.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__circle shema-content__circle-eight">
-						<div class="shema-content__item">
-							<div class="shema-content__item-text">
-								<span>Pipelines</span>
-							</div>
-							<img class="shema-content__item-img" src="images/integration-shema-circle8.svg"
-							     alt="">
-						</div>
-					</div>
-					<div class="shema-content__text">
-						<span class="shema-content__text-left">Highly configurable set-up</span>
-						<span class="shema-content__text-center">Omics Data Manager</span>
-						<span class="shema-content__text-right">Your insights from your data</span>
-					</div>
+<!--					<div class="shema-content__circle shema-content__circle-first">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Ontologies, controlled vocabularies</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle1.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__circle shema-content__circle-second">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Users, groups, permissions</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle2.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__circle shema-content__circle-third">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Metadata storage</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle3.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__circle shema-content__circle-fourth">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Data storage</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle4.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__circle shema-content__circle-fifth">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Public data</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle5.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__circle shema-content__circle-sixth">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Public data</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle6.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__circle shema-content__circle-seventh">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Exteral tools</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle7.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__circle shema-content__circle-eight">-->
+<!--						<div class="shema-content__item">-->
+<!--							<div class="shema-content__item-text">-->
+<!--								<span>Pipelines</span>-->
+<!--							</div>-->
+<!--							<img class="shema-content__item-img" src="images/integration-shema-circle8.svg"-->
+<!--							     alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="shema-content__text">-->
+<!--						<span class="shema-content__text-left">Highly configurable set-up</span>-->
+<!--						<span class="shema-content__text-center">Omics Data Manager</span>-->
+<!--						<span class="shema-content__text-right">Your insights from your data</span>-->
+<!--					</div>-->
 
 				</div>
 			</div>
@@ -289,8 +292,8 @@
 <section class="brands">
 	<div class="container">
 
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-10 col-xl-4">
+		<div class="row">
+			<div class="col-sm-12 col-md-10 offset-md-1 col-lg-4 offset-lg-0">
 				<div class="brands__items brands__items-setup">
 					<div class="brands__item">
 						<div class="brands__title">Highly configurable set-up
@@ -317,7 +320,7 @@
 				</div>
 			</div>
 
-			<div class="col-12 col-md-10 col-xl-6 offset-xl-2">
+			<div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-2">
 				<div class="brands__items">
 					<div class="brands__images">
 						<img class="brands__images-item brands__images-setup"
@@ -330,7 +333,7 @@
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col-12">
+			<div class="col-sm-12 col-md-10">
 				<div class="brands-content">
 					<div class="brands-content__list">
 						<img srcset="images/integration-brand1@2x.png 2x" src="images/integration-brand1.png"
@@ -363,29 +366,34 @@
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col-12 col-md-10 col-xl-6 pre-order">
+			<div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-0 pre-order">
 				<div class="pre__items">
-					<div class="pre__item">
-						<p class="pre__item-text">
-						<p class="pre__item-text_title">omics_api.<span class="pre__item-text_blue">findSamples</span>(
-						</p>
-						<p class="pre__item-text_content">studyQuery=”<span class="pre__item-text_orange">Human dendritic cell in skin inflammation</span>”,
-						</p>
-						<p class="pre__item-text_content">sampleFilter=”<span class="pre__item-text_orange">Organism=Human</span>”,
-						</p>
-						<p class="pre__item-text_content">sampleQuery=”<span class="pre__item-text_orange">male</span>”,
-						</p>
-						<p class="pre__item-text_content">exQuery=”<span class="pre__item-text_orange">Gene=ENSG00000230368 MinValue=20</span>”,
-						</p>
-						<p class="pre__item-text_content">vxQuery=”<span class="pre__item-text_orange">Intervals=12:23432-234324 Type=DEL</span>”
-						</p>
-						<p class="pre__item-text_footer">)</p>
-						</p>
+					<div class="pre__images">
+						<img class="pre__images-item" srcset="images/integration-brands-pre@2x.png 2x"
+						     src="images/integration-brands-pre.png"
+						     alt="">
 					</div>
+<!--					<div class="pre__item">-->
+<!--						<p class="pre__item-text">-->
+<!--						<p class="pre__item-text_title">omics_api.<span class="pre__item-text_blue">findSamples</span>(-->
+<!--						</p>-->
+<!--						<p class="pre__item-text_content">studyQuery=”<span class="pre__item-text_orange">Human dendritic cell in skin inflammation</span>”,-->
+<!--						</p>-->
+<!--						<p class="pre__item-text_content">sampleFilter=”<span class="pre__item-text_orange">Organism=Human</span>”,-->
+<!--						</p>-->
+<!--						<p class="pre__item-text_content">sampleQuery=”<span class="pre__item-text_orange">male</span>”,-->
+<!--						</p>-->
+<!--						<p class="pre__item-text_content">exQuery=”<span class="pre__item-text_orange">Gene=ENSG00000230368 MinValue=20</span>”,-->
+<!--						</p>-->
+<!--						<p class="pre__item-text_content">vxQuery=”<span class="pre__item-text_orange">Intervals=12:23432-234324 Type=DEL</span>”-->
+<!--						</p>-->
+<!--						<p class="pre__item-text_footer">)</p>-->
+<!--						</p>-->
+<!--					</div>-->
 				</div>
 			</div>
 
-			<div class="col-12 col-md-10 col-xl-4 offset-xl-1">
+			<div class="col-12 col-md-10 col-lg-4 offset-lg-1">
 				<div class="brands__items brands__items-code">
 					<div class="brands__item">
 						<div class="brands__title">Your insights from your data
@@ -409,8 +417,8 @@
 		</div>
 
 		<div class="row justify-content-center">
-			<div class="col-12">
-				<div class="brands-content">
+			<div class="col-sm-12 col-md-12">
+				<div class="brands-content brands-content__second">
 					<div class="brands-content__list">
 						<img srcset="images/integration-brand12@2x.png 2x"
 						     src="images/integration-brand12.png"
@@ -445,44 +453,53 @@
 
 	<div class="video-content">
 
-		<div class="container">
+		<div class="container video-container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-10 col-lg-10 ">
+					<div class="video-content__heading">
+					</div>
+					<div class="video-content__body">
+						<p class="video-content__body-footer">Curation tool advantages</p>
+					</div>
+				</div>
+			</div>
 			<div class="row justify-content-center">
 
-				<div class="col-12 col-md-8 col-lg-6">
+				<div class="col-12 col-md-8 col-lg-4">
 					<div class="video-content__img">
 						<div class="video-content__img-button"></div>
 						<img class="video-content__img-item"
 						     srcset="images/catalog-video@2x.png 2x"
 						     src="images/catalog-video.png"
 						     alt="">
-					</div>
-					<div class="popup" id="popup1">
-						<div class="popup-content">
+
+						<div class="popup" id="popup1">
+							<div class="popup-content">
+							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-9 col-md-7 col-lg-5 offset-lg-1 offset-1 block-first">
-					<div class="video-content__info">
-						<div class="video-content__info-title">
-							<p>A collaborative data ecosystem</p>
+				<div class="col-9 col-md-8 offset-md-0 col-lg-5 offset-lg-2 offset-2 block-first">
+					<div class="video-content__quote">
+						<div class="video-content__quote-title">
+							<p>Curation tool advantages</p>
 						</div>
-						<div class="video-content__info-text">
+						<div class="video-content__quote-text">
 							<p>We have specific APIs for different user classes, such as data managers,
-								bioinformaticians and discovery scientists, so that everybody can harness the
+								bioinformaticians and discovery <br> scientists, so that everybody can
+								harness the
 								power of multi-omics data in their day to day work.</p>
 						</div>
-						<div class="video-content__info-sign">
-							<p class="video-content__info-sign">Amy Tang, PhD, ODM Product Manager</p>
+						<div class="video-content__quote-sign">
+							<span class="video-content__quote-sign_name">Vasiliy Bout,</span>
+							<span class="video-content__quote-sign_job">Chief Technology Officer</span>
 						</div>
 					</div>
 				</div>
 
 			</div>
 		</div>
-
 	</div>
-
 </section>
 
 <section class="news">
@@ -555,7 +572,7 @@
 	<div class="contact-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-md-8 col-lg-5 offset-lg-2">
+				<div class="col-12 col-md-9 col-lg-5 offset-lg-2">
 
 					<div class="contact-content__info">
 						<p class="contact-content__info-title">Contact Genestack</p>
@@ -570,7 +587,7 @@
 				<div class="col-12 col-md-4 col-lg-2 offset-lg-2">
 					<a href="#" class="contact-content__info-button">Get in touch</a>
 				</div>
-				<div class="col-12 col-md-4 offset-md-4 col-lg-2 offset-lg-4">
+				<div class="col-12 col-md-4 offset-md-4 col-lg-3 offset-lg-4">
 					<div class="contact-content__links">
 						<a href="#" class="contact-content__links-logo">
 							<svg class="icon" width="48" height="48" viewBox="0 0 48 48">
@@ -787,8 +804,8 @@
 	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 	crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src='js/app.js'></script>
-
+<script src='js/odm.js'></script>
+<script src='js/app-bootstrap.js'></script>
 </body>
 </html>
 

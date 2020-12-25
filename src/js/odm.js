@@ -1,5 +1,49 @@
 //Page ODM
 //page-2
+const header = document.querySelector('.header'),
+	headerMod = document.querySelector('.header-mod'),
+	logo = document.querySelector('.top-line__logo'),
+	line = document.querySelectorAll('.line'),
+	toggle = document.querySelector('.menu-toggle'),
+	nav = document.querySelector('.top-line__nav'),
+	page = document.querySelector('.page'),
+	links = document.querySelector('.top-line__links');
+
+const navItem = document.querySelectorAll('.nav__item');
+const dropDown = document.querySelector('.dropdown');
+const navList = document.querySelector('.nav__list');
+toggle.addEventListener('click', () => {
+	nav.classList.toggle('toggle-active');
+	page.classList.toggle('page-hidden');
+	if (header) {
+		header.classList.add('header-mod');
+		logo.classList.add('logo-mod');
+		links.classList.toggle('toggle-active-footer');
+	}
+
+});
+//добавляем галочку в выпадающем списке
+
+navList.addEventListener('click', (event) => {
+
+	let navItem = event.target.closest('.nav__item');
+	console.log('navItem:', navItem);
+	let elem = navItem.querySelector('.dropdown');
+	let dropItem = event.target;
+	if (!dropDown) return;
+	console.log('dropItem:', dropItem);
+
+	if (navItem.classList.contains('arrow-rotate') && dropItem === navItem) {
+		elem.classList.remove('dropdown-active');
+		navItem.classList.remove('arrow-rotate');
+
+	} else {
+		elem.classList.add('dropdown-active');
+		navItem.classList.add('arrow-rotate');
+	}
+
+});
+
 //дублируем блок с ячейками в секции landscapes, для полного заполнения экрана
 const mediaQuery = window.matchMedia('max-width: 768px');
 if (mediaQuery.matches) {
