@@ -30,13 +30,13 @@ $(document).ready(function () {
 	});
 
 	$('.slider').slick({
+		asNavFor: '.wrapper__links',
 		// slidesToScroll: 1,
 		infinite: false,
 		arrows: true,
 		dots: true,
 		centerMode: true,
-		// focusOnSelect: true,
-		asNavFor: '.wrapper__links',
+		// focusOnSelect: true
 
 		responsive: [
 			{
@@ -99,15 +99,27 @@ $(document).ready(function () {
 	$('.questions__links').slick({
 		asNavFor: '.questions-block',
 		slidesToShow: 4,
+		slidesToScroll: 1,
 		arrows: false,
 		centerMode: true,
 		focusOnSelect: true,
 		draggable: false,
+		mobileFirst: true,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 1,
+					asNavFor: '.questions-block'
+				}
+			}
+		]
 
 	});
 
 	$('.questions-block').slick({
-		// asNavFor: '.questions__links',
+		asNavFor: '.questions__links',
 		slidesToShow: 1,
 		arrows: false,
 		draggable: false

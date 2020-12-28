@@ -59,7 +59,6 @@ function scroll(scrollPosition) {
 
 window.requestAnimationFrame(scroll);
 
-
 toggle.addEventListener('click', () => {
 	nav.classList.toggle('toggle-active');
 	page.classList.toggle('page-hidden');
@@ -68,7 +67,6 @@ toggle.addEventListener('click', () => {
 		logo.classList.add('logo-mod');
 		links.classList.toggle('toggle-active-footer');
 	}
-
 });
 //добавляем галочку в выпадающем списке
 

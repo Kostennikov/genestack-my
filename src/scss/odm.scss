@@ -1097,8 +1097,9 @@
 .video {
 
 	//margin: -92px auto 0 auto;
-
+	margin-bottom: 33px;
 	&-content {
+		padding-top: 30px;
 		&__heading {
 			@include title-small();
 			//margin-bottom: 16px;
@@ -1110,6 +1111,7 @@
 			line-height: 130%;
 			text-transform: none;
 			letter-spacing: .1px;
+			padding-bottom: 15px;
 		}
 
 		&__body {
@@ -1118,7 +1120,10 @@
 			font-weight: 500;
 			font-size: 24px;
 			line-height: 150%;
-
+			&-text{
+				padding: 0 110px;
+				margin-bottom: 100px;
+			}
 			&-footer {
 				display: none;
 			}
@@ -1260,8 +1265,10 @@
 	@media screen and (max-width: 767px) {
 
 		&-content {
+			padding-top: 0;
 			&__heading {
 				margin-bottom: 22px;
+				padding-bottom: 0;
 				text-align: center;
 				font-family: $Ivar;
 				font-style: normal;
@@ -1283,6 +1290,7 @@
 				line-height: 150%;
 
 				&-text {
+					padding: 0;
 					margin-bottom: 92px;
 				}
 
@@ -1389,8 +1397,10 @@
 		padding-bottom: 0;
 
 		&-content {
+			padding-top: 0;
 			&__heading {
 				margin-bottom: 16px;
+				padding-bottom: 0;
 				text-align: center;
 				font-family: $Ivar;
 				font-style: normal;
@@ -1412,6 +1422,7 @@
 				line-height: 150%;
 
 				&-text {
+					padding: 0;
 					margin-bottom: 92px;
 				}
 
@@ -1827,10 +1838,8 @@
 
 .circle {
 	overflow: hidden;
+	margin-top: 74px;
 	margin-bottom: 100px;
-	//display: flex;
-	//justify-content: center;
-	//align-items: center;
 	&-title {
 		font-family: $Ivar;
 		font-style: normal;
@@ -2361,22 +2370,13 @@
 			//LINES
 
 			&__line {
+				display: none;
 				z-index: 3;
 				position: absolute;
-				display: flex;
 				flex-direction: column;
 				color: #fff;
 				opacity: .5;
 				transition: .4s;
-				display: none;
-				//&:hover{
-				//	opacity: 1;
-				//	z-index: 7;
-				//}
-				//&:hover .circle-lite__path {
-				//	opacity: 1;
-				//	z-index: 6;
-				//}
 			}
 
 
@@ -2844,6 +2844,7 @@
 
 .questions {
 	margin-bottom: 90px;
+	padding-top: 16px;
 	overflow: hidden;
 
 
@@ -2853,8 +2854,8 @@
 		font-family: $Ivar;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 40px;
-		line-height: 130%;
+		font-size: 44px;
+		line-height: 120%;
 
 		text-align: center;
 		letter-spacing: -1px;
@@ -2887,12 +2888,13 @@
 			border-radius: 0;
 			color: #000;
 			transition: .4s;
-			min-height: 52px;
+			min-height: 62px;
+			min-width: 150px !important;
 			height: 100%;
 			white-space: initial;
 			line-height: 20px;
 			padding: 3px;
-			overflow: hidden;
+			//overflow: hidden;
 
 			&:hover {
 				color: #fff;
@@ -2911,6 +2913,9 @@
 
 		.slick-track {
 			display: flex;
+			@media (min-width: 768px) {
+				transform: none !important;
+			}
 		}
 
 		.slick-current {
@@ -2925,11 +2930,11 @@
 				position: absolute;
 				z-index: 1;
 				background-color: #023F79;
-				bottom: -5px;
+				bottom: -11px;
 				left: 50%;
-				margin-left: -5px;
-				width: 10px;
-				height: 10px;
+				margin-left: -11px;
+				width: 22px;
+				height: 22px;
 				transform: rotate(45deg);
 				animation: active ease-out 250ms running;
 			}
@@ -2941,7 +2946,10 @@
 	}
 
 	&__list {
+		margin-top: 25px;
 		padding-bottom: 40px;
+		padding-left: 100px !important;
+		padding-right: 100px !important;
 		transition: .4s;
 
 
@@ -2979,12 +2987,12 @@
 				content: "";
 				z-index: 1;
 				position: absolute;
-				top: 31px;
-				right: 10px;
 				background: url(../images/plus.svg) no-repeat;
+				top: 31px;
+				right: 14px;
+				width: 16px;
+				height: 16px;
 
-				width: 14px;
-				height: 14px;
 				cursor: pointer;
 			}
 		}
@@ -2995,9 +3003,9 @@
 				z-index: 1;
 				position: absolute;
 				top: 37px;
-				right: 10px;
+				right: 14px;
 				background: url(../images/minus.svg) no-repeat;
-				width: 14px;
+				width: 16px;
 				height: 2px;
 				cursor: pointer;
 			}
@@ -3105,6 +3113,14 @@
 				}
 			}
 		}
+		&__list {
+			margin-top: 25px;
+			padding-bottom: 40px;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			transition: .4s;
+
+		}
 		&-block {
 
 			.slick-list {
@@ -3124,6 +3140,17 @@
 					}
 				}
 			}
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 1259px) {
+		&__list {
+			margin-top: 25px;
+			padding-bottom: 40px;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			transition: .4s;
+
 		}
 	}
 }

@@ -58,51 +58,67 @@ let circle = document.querySelector('.circle-items');
 let dataLine = document.querySelectorAll('[data-line]');
 let dataActive = document.querySelector('[data-active]');
 
-circleConstructor && loadCircle;
-const options = {
-	root: null,
-	rootMargin: '0px',
-	threshold: 0.7
-};
+circle && circleBlock();
 
-let loadCircle = function (entries, observer) {
-	entries.forEach(entry => {
-		if (entry.isIntersecting && entry.target.classList.contains('circle-items')) {
-			entry.target.classList.add('items-active');
-			console.log('элемент в области наблюдения');
-			setTimeout(() => {
-				dataActive.classList.add('constructor-active')
-				dataLine.forEach((dataLine) => {
-					dataLine.classList.add('circle-line__load');
-				});
-			}, 700);
-		}
+function circleBlock(){
+	const options = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0.7
+	};
+
+	let loadCircle = function (entries) {
+		entries.forEach(entry => {
+			if (entry.isIntersecting && entry.target.classList.contains('circle-items')) {
+				entry.target.classList.add('items-active');
+				setTimeout(() => {
+					dataActive.classList.add('constructor-active')
+					dataLine.forEach((dataLine) => {
+						dataLine.classList.add('circle-line__load');
+					});
+				}, 700);
+			}
+
+		});
+	};
+
+	const observer = new IntersectionObserver(loadCircle, options);
+
+	observer.observe(circle, circleLines);
+
+	circle.addEventListener('click', (event) => {
+
+		circleConstructor.forEach((circleConstructor) => {
+			let target = circleConstructor.getAttribute('data-target');
+			let num = circleConstructor.getAttribute('data-num');
+			circleConstructor.classList.remove('constructor-active');
+			let circlePart = event.target.closest('.circle-constructor');
+			circlePart.classList.add('constructor-active');
+			showDemo(target, num);
+
+		});
 
 	});
-};
-const observer = new IntersectionObserver(loadCircle, options);
+	const circleItems = document.querySelector('.circle-demo__items');
+	const circleItem = document.querySelectorAll('.circle-demo__item');
+	const circleContent = document.querySelectorAll('.circle-demo__content');
 
-observer.observe(circle, circleLines);
-
-circle.addEventListener('click', (event) => {
-
-	circleConstructor.forEach((circleConstructor) => {
-		let target = circleConstructor.getAttribute('data-target');
-		let num = circleConstructor.getAttribute('data-num');
-		circleConstructor.classList.remove('constructor-active');
-		let circlePart = event.target.closest('.circle-constructor');
-
-		circlePart.classList.add('constructor-active');
-
-		showDemo(target, num);
-		// let trigger = event.target.closest('.circle-constructor__line');
-		// if (target || trigger) {
-		// 	targetArc(event);
-		// 	// targetLine(event);
-		// }
+	circleItems.addEventListener('click', function (event) {
+		event.preventDefault();
+		let target = event.target.closest('.circle-demo__item');
+		if (!target) return;
+		circleItem.forEach(function (event) {
+			event.classList.remove('circle-demo__active');
+			target.classList.add('circle-demo__active');
+		});
+		circleContent.forEach(function (circleContent) {
+			circleContent.classList.remove('circle-demo__show');
+			target.querySelector('.circle-demo__content').classList.add('circle-demo__show');
+		});
 	});
+}
 
-});
+
 
 // function showDemo(target, num) {
 // 	console.log(circleItem.target, circleItem.num);
@@ -110,24 +126,7 @@ circle.addEventListener('click', (event) => {
 // 	circleItem.num = num;
 // }
 
-const circleItems = document.querySelector('.circle-demo__items');
-const circleItem = document.querySelectorAll('.circle-demo__item');
 
-const circleContent = document.querySelectorAll('.circle-demo__content');
-
-circleItems.addEventListener('click', function (event) {
-	event.preventDefault();
-	let target = event.target.closest('.circle-demo__item');
-	if (!target) return;
-	circleItem.forEach(function (event) {
-		event.classList.remove('circle-demo__active');
-		target.classList.add('circle-demo__active');
-	});
-	circleContent.forEach(function (circleContent) {
-		circleContent.classList.remove('circle-demo__show');
-		target.querySelector('.circle-demo__content').classList.add('circle-demo__show');
-	});
-});
 
 const questionsBlock = document.querySelector('.questions-block');
 const questionsList = document.querySelectorAll('.questions__list');
@@ -154,3 +153,38 @@ questionsList.forEach((questionsBlock) => {
 	});
 });
 
+const footerHead = document.querySelectorAll('.footer-content__list-head');
+const footerRow = document.querySelector('.footer-row');
+footerRow.addEventListener('click', (event) => {
+	event.preventDefault();
+	let trigger = event.target.closest('.footer-content__list');
+	if (!trigger) return;
+	console.log(trigger);
+	let element = trigger.querySelectorAll('.footer-content__list-item');
+
+	let elemClose = event.target.closest('.footer-content__list-head');
+
+	elemClose.classList.toggle('item-deactive');
+
+	element.forEach(function (element) {
+		if (element.classList.contains('item-show') && elemClose) {
+			element.classList.remove('item-show');
+
+		} else {
+			element.classList.add('item-show');
+
+		}
+	});
+
+});
+footerHead.forEach((footerHead) => {
+	// if (footerList.childNodes.length > 3){
+
+	// let ggg = footerHead.childNodes.length;
+	// console.log(footerHead);
+	// console.log(ggg);
+
+	footerHead.classList.add('item-active');
+
+	// }
+});
