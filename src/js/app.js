@@ -9,9 +9,7 @@ const header = document.querySelector('.header'),
 	page = document.querySelector('.page'),
 	links = document.querySelector('.top-line__links');
 
-const navItem = document.querySelectorAll('.nav__item');
-const dropDown = document.querySelector('.dropdown');
-const navList = document.querySelector('.nav__list');
+
 
 let scrollPosition = window.scrollY;
 let topPos = header.offsetTop;
@@ -71,13 +69,10 @@ toggle.addEventListener('click', () => {
 //добавляем галочку в выпадающем списке
 
 navList.addEventListener('click', (event) => {
-
 	let navItem = event.target.closest('.nav__item');
-	console.log('navItem:', navItem);
 	let elem = navItem.querySelector('.dropdown');
 	let dropItem = event.target;
 	if (!dropDown) return;
-	console.log('dropItem:', dropItem);
 
 	if (navItem.classList.contains('arrow-rotate') && dropItem === navItem) {
 		elem.classList.remove('dropdown-active');

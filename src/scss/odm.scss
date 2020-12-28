@@ -19,6 +19,9 @@
 	}
 }
 
+.container-fluid {
+	max-width: 1200px;
+}
 
 .header-mod {
 	@include header-text;
@@ -27,10 +30,10 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 72px;
+	height: $odm-header-height;
 	margin-top: 0;
 	color: #4F4F4F;
-	background-color: rgba(255, 255, 255, .95);
+	background-color: #fff;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	animation: active ease-out .2s running;
 
@@ -46,8 +49,8 @@
 
 
 	.top-line {
-		align-items: center;
-		height: 72px;
+		//align-items: center;
+		height: $odm-header-height;
 
 		@media screen and (max-width: 1259px) {
 			.checkbox {
@@ -57,22 +60,24 @@
 				display: none;
 			}
 		}
-
+		.col-logo{
+			height: 100%;
+		}
 		&-flex {
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
 		}
 
-
 		&__logo {
 			display: block;
 			text-indent: -999px;
 			overflow: hidden;
-			background: url(../images/GSlogo-blue.svg) no-repeat;
+			background: url(../images/GSlogo-blue.svg) no-repeat center;
 			background-size: contain;
-			width: 166px;
-			height: 24px;
+			width: 155px;
+			height: 100%;
+			line-height: 72px;
 		}
 
 		&__nav {
@@ -85,31 +90,37 @@
 
 			.nav__list {
 				display: flex;
-
+				padding-left: 0;
+				margin-bottom: -1px;
 				.nav__item {
 					@include link-style;
 					@include transition;
 					@include header-text;
 					display: flex;
-					//justify-content: space-between;
-					padding: 0 13px;
+					margin-right: 35px;
+					align-items: center;
+					height: $odm-header-height;
+					&:hover {
+						transition: ease .4s;
+						border-bottom: 1px solid #023F79;
 
+					}
 					&:first-child {
 						margin-left: 0;
 					}
 
-					@media (min-width: 1260px) {
-						align-items: center;
-						height: 56px;
-						&:hover {
-							//@include nav-item__hover;
-							//@include transition;
-							transition: ease .4s;
-							border-bottom: 1px solid #023F79;
-
-
-						}
-					}
+					//@media (min-width: 1260px) {
+					//	align-items: center;
+					//	height: $odm-header-height;
+					//	&:hover {
+					//		//@include nav-item__hover;
+					//		//@include transition;
+					//		transition: ease .4s;
+					//		border-bottom: 1px solid #023F79;
+					//
+					//
+					//	}
+					//}
 
 
 					&-arrow {
@@ -135,12 +146,6 @@
 						}
 
 					}
-
-
-					//@media (min-width: 1260px) {
-					//
-					//}
-
 
 					@media (min-width: 1260px) {
 						&:hover .dropdown {
@@ -286,29 +291,44 @@
 
 
 		}
-
+		.col-links{
+			margin-left: 160px;
+		}
 		&__links {
-			display: flex;
-			justify-content: center;
-			height: 56px;
-			line-height: 56px;
+			height: $odm-header-height;
+			line-height: $odm-header-height;
 
 			&-text {
-				@include small-light-font;
-				align-self: center;
+				font-family: $Larsseit;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 150%;
+
+				text-align: center;
+
+
 				color: #4F4F4F;
+
 				text-decoration: none;
 			}
 
 			&-button {
 				@include button;
 				@include link-style;
-				@include small-light-font;
+				font-family: $Larsseit;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 32px;
+				text-align: center;
+
+				color: #FFFFFF;
 				background-image: linear-gradient(to left, #023F79 50%, #0470BE 50%);
 				height: 32px;
 				width: 152px;
 				border-radius: 30px;
-				line-height: 32px;
+
 
 
 				&:hover {
@@ -446,11 +466,6 @@
 
 			&__links {
 				display: none;
-				//position: absolute;
-				//top: 33px;
-				//right: -15px;
-				//flex-direction: column;
-				//overflow: hidden;
 
 				&-text {
 					@include header-button;
@@ -514,25 +529,24 @@
 				user-select: none;
 
 				&__label {
-					margin-bottom: -5px;
+					margin-bottom: 0;
+					height: 100%;
+					//width: 50%;
 				}
 
 				.checkbox {
 					display: block;
-					width: 32px;
-					height: 32px;
-					position: absolute;
-					right: 3px;
-					bottom: 0;
+					width: 22px;
+					height: 35%;
 					cursor: pointer;
-					opacity: 0; /* hide this */
-					z-index: 2; /* and place it over the hamburger */
+					opacity: 0;
+					z-index: 2;
 					-webkit-touch-callout: none;
 
 					&:checked ~ .line {
 						opacity: 1;
 						transform: rotate(45deg) translate(0, 0) scale(1.02, 1);
-						//background: #333333;
+						background: #333333;
 					}
 
 					&:checked ~ .nav__list {
@@ -548,15 +562,13 @@
 						transform: rotate(-45deg) translate(-1px, 0px) scale(1.03, 1);
 					}
 
-
 				}
 
 				.line {
-
 					display: block;
 					width: 22px;
 					height: 2px;
-					margin-bottom: 5px;
+					margin-bottom: 6px;
 					position: relative;
 					right: 0;
 					background: #4F4F4F;
@@ -639,13 +651,12 @@
 					.nav__item {
 						display: flex;
 						flex-direction: column;
-
+						align-items: flex-start;
 						margin: 0 15px;
 						line-height: 60px;
-						border-top: 1px solid rgb(0, 0, 0, 0.1);
+						border-top: 1px solid rgba(0, 0, 0, 0.1);
 						border-bottom: none;
 						color: #023F79;
-
 
 						.dropdown {
 							display: none;
@@ -703,9 +714,12 @@
 				}
 			}
 
+			.col-links{
+				margin-left: 0;
+			}
 			&__links {
 
-				//overflow: hidden;
+				margin-left: -65px;
 
 				&-text {
 					color: #4F4F4F;
@@ -746,12 +760,10 @@
 					width: 90vw;
 					max-width: 340px;
 					height: 52px;
-					//margin-right: 10px;
 					margin-bottom: 15px;
 					color: #fff !important;
 					text-decoration: none;
-					//background-color: #000;
-					border: 1px solid #FFFFFF;
+					border: 1px solid #fff;
 					background-image: linear-gradient(to left, #4F4F4F 50%, #000 50%);
 					cursor: pointer;
 					-webkit-transition: none;
@@ -764,34 +776,27 @@
 					height: 52px;
 					line-height: 52px;
 					float: right;
-					//-webkit-transition: none;
-					//transition: none;
 				}
 			}
 
 			.menu-toggle {
 				display: flex;
 				flex-direction: column;
-				//align-items: flex-end;
-				//display: inline-block;
-				//position: fixed;
-				//top: 20px;
-				//right: 15px;
-				/*left: 50px;*/
 				z-index: 1;
 				-webkit-user-select: none;
 				user-select: none;
-
+				&__label {
+					margin-bottom: 0;
+					height: 100%;
+					width: 50%;
+				}
 				.checkbox {
 					display: block;
-					width: 32px;
-					height: 32px;
-					position: absolute;
-					right: 10px;
-					bottom: 0;
+					width: 22px;
+					height: 38%;
 					cursor: pointer;
-					opacity: 0; /* hide this */
-					z-index: 2; /* and place it over the hamburger */
+					opacity: 0;
+					z-index: 2;
 					-webkit-touch-callout: none;
 
 					&:checked ~ .line {
@@ -817,7 +822,6 @@
 				}
 
 				.line {
-
 					display: block;
 					width: 22px;
 					height: 2px;
@@ -869,10 +873,10 @@
 	}
 
 	@media (min-width: 1260px) and (max-width: 1919px) {
-		height: 72px;
+		height: $odm-header-height;
 		margin-top: 0;
 		.top-line {
-			padding-left: 32px;
+			//padding-left: 32px;
 		}
 	}
 }

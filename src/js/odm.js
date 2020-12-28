@@ -9,23 +9,20 @@ const header = document.querySelector('.header'),
 	page = document.querySelector('.page'),
 	links = document.querySelector('.top-line__links');
 
-const navItem = document.querySelectorAll('.nav__item');
-const dropDown = document.querySelector('.dropdown');
-const navList = document.querySelector('.nav__list');
 toggle.addEventListener('click', () => {
 	nav.classList.toggle('toggle-active');
 	page.classList.toggle('page-hidden');
-	if (header) {
-		header.classList.add('header-mod');
-		logo.classList.add('logo-mod');
-		links.classList.toggle('toggle-active-footer');
-	}
+	header.classList.add('header-mod');
+	logo.classList.add('logo-mod');
+	links.classList.toggle('toggle-active-footer');
 
 });
 //добавляем галочку в выпадающем списке
+const navItem = document.querySelectorAll('.nav__item');
+const dropDown = document.querySelector('.dropdown');
+const navList = document.querySelector('.nav__list');
 
 navList.addEventListener('click', (event) => {
-
 	let navItem = event.target.closest('.nav__item');
 	console.log('navItem:', navItem);
 	let elem = navItem.querySelector('.dropdown');
@@ -41,7 +38,6 @@ navList.addEventListener('click', (event) => {
 		elem.classList.add('dropdown-active');
 		navItem.classList.add('arrow-rotate');
 	}
-
 });
 
 //дублируем блок с ячейками в секции landscapes, для полного заполнения экрана
@@ -60,7 +56,7 @@ let dataActive = document.querySelector('[data-active]');
 
 circle && circleBlock();
 
-function circleBlock(){
+function circleBlock() {
 	const options = {
 		root: null,
 		rootMargin: '0px',
@@ -72,7 +68,7 @@ function circleBlock(){
 			if (entry.isIntersecting && entry.target.classList.contains('circle-items')) {
 				entry.target.classList.add('items-active');
 				setTimeout(() => {
-					dataActive.classList.add('constructor-active')
+					dataActive.classList.add('constructor-active');
 					dataLine.forEach((dataLine) => {
 						dataLine.classList.add('circle-line__load');
 					});
@@ -118,15 +114,11 @@ function circleBlock(){
 	});
 }
 
-
-
 // function showDemo(target, num) {
 // 	console.log(circleItem.target, circleItem.num);
 // 	circleItem.target = target;
 // 	circleItem.num = num;
 // }
-
-
 
 const questionsBlock = document.querySelector('.questions-block');
 const questionsList = document.querySelectorAll('.questions__list');
