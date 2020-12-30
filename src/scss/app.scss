@@ -58,7 +58,7 @@ li {
 	//margin-bottom: 600px;
 	height: $header-mod-height;
 	margin-top: 37px;
-	overflow: hidden;
+
 
 	&-mod {
 		@include header-text;
@@ -166,6 +166,7 @@ li {
 					@include link-style;
 					@include transition;
 					@include header-text;
+					position: relative;
 					display: flex;
 					margin-right: 24px;
 					align-items: center;
@@ -383,6 +384,7 @@ li {
 	}
 
 	@media screen and (max-width: 767px) {
+		overflow: hidden;
 		height: $header-mod-height;
 		margin-top: 0;
 		&-mod {
@@ -595,6 +597,7 @@ li {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+				align-items: flex-end;
 				margin-right: 15px;
 				-webkit-user-select: none;
 				user-select: none;
@@ -692,6 +695,7 @@ li {
 	}
 
 	@media (min-width: 768px) and (max-width: 1259px) {
+		overflow: hidden;
 		height: $odm-header-height;
 		margin-top: 0;
 		transition: ease .1ms;
@@ -893,6 +897,8 @@ li {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+				align-items: flex-end;
+				margin-right: 15px;
 				z-index: 1;
 				-webkit-user-select: none;
 				user-select: none;

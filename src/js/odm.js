@@ -10,13 +10,11 @@ const header = document.querySelector('.header'),
 	links = document.querySelector('.top-line__links');
 
 toggle.addEventListener('click', () => {
+	links.classList.toggle('toggle-active-footer');
 	nav.classList.toggle('toggle-active');
 	page.classList.toggle('page-hidden');
-	header.classList.add('header-mod');
-	logo.classList.add('logo-mod');
-	links.classList.toggle('toggle-active-footer');
-
 });
+
 //добавляем галочку в выпадающем списке
 const navItem = document.querySelectorAll('.nav__item');
 const dropDown = document.querySelector('.dropdown');
@@ -39,6 +37,49 @@ navList.addEventListener('click', (event) => {
 		navItem.classList.add('arrow-rotate');
 	}
 });
+
+navItem.forEach(function (navItem) {
+	if (navItem.querySelector('.dropdown')) {
+		navItem.classList.add('nav__item-arrow');
+	}
+});
+
+// POP-UP
+const videoBtn = document.querySelector('.video-content__img-button'),
+	popup = document.querySelector('.popup'),
+	popupClose = document.querySelector('.popup-close'),
+	videoItem = document.querySelector('.video-content__img'),
+	popupContent = document.querySelector('.popup-content');
+
+videoItem.addEventListener('click', function (event) {
+	const element = event.target.closest('.video-content__img');
+	console.log('element:', element);
+	popup.style.display = 'block';
+	page.classList.add('page-hidden');
+	if (element) {
+		// добавляем iframe
+		popupContent.insertAdjacentHTML('afterbegin', ' <iframe class="video__file" width="100%" height="100%"\n' +
+			'                                data-src="https://www.youtube.com/embed/5hOKmkODrp0" frameborder="0"\n' +
+			'                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"\n' +
+			'                                allowfullscreen></iframe>');
+
+		const videoFile = document.querySelector('.video__file');
+		const link = videoFile.dataset.src;
+		videoFile.setAttribute('src', link);
+		// videoFile.removeAttribute('data-src')
+	}
+});
+
+// удаляем pop-up и iframe
+popup.addEventListener('click', function () {
+	if (popupContent) {
+		popup.style.display = 'none';
+		popup.querySelector('.video__file').remove();
+		page.classList.remove('page-hidden');
+	}
+});
+
+
 
 //дублируем блок с ячейками в секции landscapes, для полного заполнения экрана
 const mediaQuery = window.matchMedia('max-width: 768px');
