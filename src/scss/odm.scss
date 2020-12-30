@@ -125,7 +125,7 @@
 
 					&-arrow {
 						position: relative;
-						margin-right: 9px;
+						padding-right: 9px;
 
 						&:before {
 							content: '';
@@ -299,6 +299,7 @@
 			line-height: $odm-header-height;
 
 			&-text {
+
 				font-family: $Larsseit;
 				font-style: normal;
 				font-weight: 300;
@@ -306,8 +307,6 @@
 				line-height: 150%;
 
 				text-align: center;
-
-
 				color: #4F4F4F;
 
 				text-decoration: none;
@@ -863,8 +862,6 @@
 				width: 100%;
 				height: 100vh;
 
-				//transform-origin: 0% 0%;
-				//transform: translate(0,  -100% );
 				transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 			}
 

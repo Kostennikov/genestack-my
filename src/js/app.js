@@ -4,7 +4,7 @@ const header = document.querySelector('.header'),
 	headerMod = document.querySelector('.header-mod'),
 	logo = document.querySelector('.top-line__logo'),
 	line = document.querySelectorAll('.line'),
-	toggle = document.querySelector('.menu-toggle'),
+	toggle = document.querySelector('.checkbox'),
 	nav = document.querySelector('.top-line__nav'),
 	page = document.querySelector('.page'),
 	links = document.querySelector('.top-line__links');
@@ -67,7 +67,9 @@ toggle.addEventListener('click', () => {
 	}
 });
 //добавляем галочку в выпадающем списке
-
+const navItem = document.querySelectorAll('.nav__item');
+const dropDown = document.querySelector('.dropdown');
+const navList = document.querySelector('.nav__list');
 navList.addEventListener('click', (event) => {
 	let navItem = event.target.closest('.nav__item');
 	let elem = navItem.querySelector('.dropdown');
@@ -163,15 +165,7 @@ footerRow.addEventListener('click', (event) => {
 });
 
 footerHead.forEach((footerHead) => {
-	// if (footerList.childNodes.length > 3){
-
-	// let ggg = footerHead.childNodes.length;
-	// console.log(footerHead);
-	// console.log(ggg);
-
 	footerHead.classList.add('item-active');
-
-	// }
 });
 
 
