@@ -80,6 +80,7 @@ li {
 			@include button;
 			display: inline-block;
 			height: 64px;
+			padding: 0 18px;
 			font-family: $Larsseit;
 			font-style: normal;
 			font-weight: 500;
@@ -277,6 +278,10 @@ li {
 		}
 
 	}
+	//@media (min-width: 1260px) and (max-width: 1919px){
+	//	margin-bottom: 5.1rem;
+	//}
+
 }
 
 .contact {
@@ -292,9 +297,8 @@ li {
 
 		&__info {
 			&-title {
-				margin-top: 70px;
-				margin-bottom: 10px;
-				//padding-bottom: 6px;
+				margin-top: 72px;
+				margin-bottom: 8px;
 				font-weight: 500;
 				font-size: 32px;
 				line-height: 130%;
@@ -691,8 +695,8 @@ li {
 			margin-bottom: 3px;
 		}
 		.footer__indent{
-			padding-top: 15px;
-			margin-top: 15px;
+			padding-top: 14px;
+			margin-top: 9px;
 			&-sign{
 				font-family: $Larsseit;
 				font-style: normal;

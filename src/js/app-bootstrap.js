@@ -31,35 +31,51 @@ $(document).ready(function () {
 
 	$('.slider').slick({
 		asNavFor: '.wrapper__links',
-		// slidesToScroll: 1,
+		slidesToShow: 2.4,
+		slidesToScroll: 1,
 		infinite: false,
-		arrows: true,
-		dots: true,
-		centerMode: true,
-		// focusOnSelect: true
+		arrows: false,
+		dots: false,
+		// mobileFirst: true,
+		// centerMode: true,
+		focusOnSelect: true,
 
 		responsive: [
 			{
-				breakpoint: 4000,
+				breakpoint: 1920,
 				settings: {
-					// slidesToShow: 2,
-					dots: false,
+					slidesToShow: 1.9,
+					slidesToScroll: 1,
+					arrows: true,
+					dots: true,
 				}
 			},
 			{
-				breakpoint: 1259,
+				breakpoint: 1260,
 				settings: {
-					// slidesToShow: 2,
-					// dots: false
+					slidesToShow: 1.2,
+					slidesToScroll: 1,
+					dots: true,
 				}
 			},
 			{
 				breakpoint: 992,
 				settings: {
-					// slidesToShow: 1,
-					arrows: false
+					slidesToShow: 1.2,
+					slidesToScroll: 1,
+					arrows: false,
+					dots: true,
 				}
 			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1.05,
+					slidesToScroll: 1,
+					arrows: false,
+					dots: true,
+				}
+			}
 		]
 	});
 
@@ -68,7 +84,8 @@ $(document).ready(function () {
 		infinite: false,
 		arrows: false,
 		dots: false,
-		slidesToShow: 5,
+		variableWidth: true,
+		// slidesToShow: 5,
 		focusOnSelect: true,
 
 	});
@@ -85,6 +102,7 @@ $(document).ready(function () {
 		// focusOnSelect: true
 		infinite: false,
 		draggable: false,
+		// mobileFirst: true,
 		responsive: [
 			{
 				breakpoint: 1200,
@@ -98,13 +116,15 @@ $(document).ready(function () {
 
 	$('.questions__links').slick({
 		asNavFor: '.questions-block',
+		variableWidth: true,
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: false,
 		centerMode: true,
 		focusOnSelect: true,
 		draggable: false,
-		mobileFirst: true,
+		// mobileFirst: true,
+
 		responsive: [
 			{
 				breakpoint: 768,
@@ -122,6 +142,17 @@ $(document).ready(function () {
 		asNavFor: '.questions__links',
 		slidesToShow: 1,
 		arrows: false,
-		draggable: false
+		draggable: false,
+		infinite: false,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+
+				}
+			}
+		]
 	});
 });

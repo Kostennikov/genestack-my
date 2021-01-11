@@ -9,8 +9,6 @@ const header = document.querySelector('.header'),
 	page = document.querySelector('.page'),
 	links = document.querySelector('.top-line__links');
 
-
-
 let scrollPosition = window.scrollY;
 let topPos = header.offsetTop;
 console.log(topPos);
@@ -167,11 +165,4 @@ footerRow.addEventListener('click', (event) => {
 footerHead.forEach((footerHead) => {
 	footerHead.classList.add('item-active');
 });
-
-
-
-
-
-
-
 
