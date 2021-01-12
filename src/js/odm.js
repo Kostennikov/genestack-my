@@ -53,7 +53,6 @@ const videoBtn = document.querySelector('.video-content__img-button'),
 
 videoItem.addEventListener('click', function (event) {
 	const element = event.target.closest('.video-content__img');
-	console.log('element:', element);
 	popup.style.display = 'block';
 	page.classList.add('page-hidden');
 	if (element) {

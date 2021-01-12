@@ -14,7 +14,8 @@ $(document).ready(function () {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		centerMode: true,
-		focusOnSelect: true
+		focusOnSelect: true,
+
 	});
 
 	$('.demo-images').slick({
@@ -25,8 +26,7 @@ $(document).ready(function () {
 		dots: false,
 		arrows: false,
 		infinite: false,
-		draggable: false
-
+		draggable: false,
 	});
 
 	$('.slider').slick({
@@ -105,18 +105,18 @@ $(document).ready(function () {
 		// mobileFirst: true,
 		responsive: [
 			{
-				breakpoint: 1200,
-				settings: {
-					dots: false,
-
-				}
-			}
+				breakpoint: 1260,
+				settings: "unslick"
+			},
 		]
+
 	});
+
 
 	$('.questions__links').slick({
 		asNavFor: '.questions-block',
 		variableWidth: true,
+		infinite: false,
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		arrows: false,
@@ -129,9 +129,10 @@ $(document).ready(function () {
 			{
 				breakpoint: 768,
 				settings: {
-					slidesToShow: 4,
+					slidesToShow: 1,
 					slidesToScroll: 1,
-					asNavFor: '.questions-block'
+					centerMode: false,
+					asNavFor: '.questions-block',
 				}
 			}
 		]
@@ -140,19 +141,20 @@ $(document).ready(function () {
 
 	$('.questions-block').slick({
 		asNavFor: '.questions__links',
-		slidesToShow: 1,
+		// slidesToShow: 4,
+		// slidesToScroll: 1,
 		arrows: false,
 		draggable: false,
 		infinite: false,
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-
-				}
-			}
-		]
+		// responsive: [
+		// 	{
+		// 		breakpoint: 768,
+		// 		settings: {
+		// 			slidesToShow: 4,
+		// 			slidesToScroll: 1,
+		//
+		// 		}
+		// 	}
+		// ]
 	});
 });
