@@ -139,6 +139,7 @@ observer.observe(circle);
 			// 	targetArc(event);
 			// 	// targetLine(event);
 			// }
+			return
 		});
 
 	});

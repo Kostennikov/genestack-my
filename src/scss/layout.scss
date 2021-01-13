@@ -1,33 +1,10 @@
 @import "variables";
 @import "mixins";
 
-@keyframes active {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes activeDote {
-	0% {
-		transition: (-100%, 0);
-	}
-	100% {
-		transition: (100%, 0);
-	}
-}
-
-
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-}
-
-.container-fluid {
-	max-width: 1260px;
 }
 
 ul {
@@ -47,21 +24,57 @@ li {
 	}
 }
 
+@keyframes activeDote {
+	0% {
+		transition: (-100%, 0);
+	}
+	100% {
+		transition: (100%, 0);
+	}
+}
+
+@keyframes scroll {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-150%, 0);
+	}
+}
+
+@keyframes lineActive {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes line {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
 .page {
 	position: relative;
-	box-sizing: border-box;
 	font-size: 100%;
 	font-family: $Larsseit;
 	font-weight: 300;
 	margin: 0;
 	padding: 0;
-
 }
 
 .page-hidden {
 	overflow: hidden;
 }
-
+.container-fluid {
+	max-width: 1200px;
+}
 .header-mod {
 	@include header-text;
 	position: fixed;
@@ -152,20 +165,6 @@ li {
 					&:first-child {
 						//margin-left: 0;
 					}
-
-					//@media (min-width: 1260px) {
-					//	align-items: center;
-					//	height: $odm-header-height;
-					//	&:hover {
-					//		//@include nav-item__hover;
-					//		//@include transition;
-					//		transition: ease .4s;
-					//		border-bottom: 1px solid #023F79;
-					//
-					//
-					//	}
-					//}
-
 
 					&-arrow {
 						position: relative;
@@ -434,7 +433,7 @@ li {
 							display: none;
 							height: 100%;
 							position: relative;
-							padding: 0 15px;
+							padding: 8px 15px;
 
 							&__item {
 								padding: 0;
@@ -655,8 +654,6 @@ li {
 			}
 
 		}
-
-
 	}
 
 	@media (min-width: 768px) and (max-width: 1259px) {
@@ -720,8 +717,8 @@ li {
 							display: none;
 							height: 100%;
 							position: relative;
-							padding: 0 15px;
-
+							padding: 8px 15px;
+							transition: width 1s cubic-bezier(0, 0, 1, 1) 500ms;
 							&__item {
 								padding: 0;
 								height: 45px;
@@ -732,7 +729,7 @@ li {
 
 						.dropdown-main {
 							height: 100%;
-							padding: 0 15px;
+							padding: 8px 15px;
 
 							&__item-li {
 								padding: 0;
@@ -974,13 +971,17 @@ li {
 	width: 100%;
 	//padding: 90px 0;
 	text-align: center;
-
+	&-col{
+		display: flex;
+		justify-content: center;
+	}
 	&__links {
 		display: flex;
 		//justify-content: center;
 		margin-top: -32px;
 
 		margin-bottom: 50px;
+		width: fit-content;
 		height: 64px;
 		background-color: #fff;
 

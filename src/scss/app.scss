@@ -39,6 +39,14 @@ li {
 	}
 }
 
+@keyframes deactive {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
 .container-fluid {
 	max-width: 1392px;
 	@media screen and (max-width: 1919px) {
@@ -75,7 +83,7 @@ li {
 		color: #4F4F4F;
 		background-color: #fff;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-		animation: active ease-out .2s running;
+		animation: active ease-out .3s running;
 
 		//&:before {
 		//	content: '';
@@ -178,7 +186,7 @@ li {
 
 					@media (min-width: 1260px) {
 						align-items: center;
-						height: 56px;
+						height: 72px;
 						&:hover {
 							transition: ease .4s;
 							border-bottom: 1px solid #023F79;
@@ -340,8 +348,8 @@ li {
 		}
 
 		&__links {
-			height: $header-mod-height;
-			line-height: $header-mod-height;
+			height: $odm-header-height;
+			line-height: $odm-header-height;
 
 			&-text {
 				padding-left: 18px;
@@ -436,7 +444,6 @@ li {
 				left: 0;
 				top: -999px;
 				padding-top: 16px;
-
 				.nav__list {
 					display: flex;
 					flex-direction: column;
@@ -470,7 +477,7 @@ li {
 							display: none;
 							height: 100%;
 							position: relative;
-							padding: 0 15px;
+							padding: 8px 15px;
 
 							&__item {
 								padding: 0;
@@ -678,6 +685,7 @@ li {
 			.toggle-active {
 				overflow-y: scroll;
 				overflow-x: hidden;
+				opacity: 1;
 				top: 53px;
 				position: fixed;
 				background-color: #fff;
@@ -686,7 +694,7 @@ li {
 
 				//transform-origin: 0% 0%;
 				//transform: translate(0,  -100% );
-				transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+				//transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 			}
 
 		}
@@ -767,8 +775,8 @@ li {
 							display: none;
 							height: 100%;
 							position: relative;
-							padding: 0 15px;
-
+							padding: 8px 15px;
+							transition: .4s;
 							&__item {
 								padding: 0;
 								height: 45px;
@@ -779,7 +787,7 @@ li {
 
 						.dropdown-main {
 							height: 100%;
-							padding: 0 15px;
+							padding: 8px 15px;
 
 							&__item-li {
 								padding: 0;
@@ -801,6 +809,7 @@ li {
 							position: relative;
 							top: 0;
 							height: 100%;
+							transition: .4s;
 						}
 
 						&:last-child {
@@ -1795,7 +1804,7 @@ li {
 
 
 						.demo__item {
-							padding: 10px 40px 0 40px;
+							padding: 14px 40px 0 40px;
 							margin: 10px 0;
 							width: 360px !important;
 							outline: none;
@@ -1812,7 +1821,7 @@ li {
 
 						.demo-active {
 							background-color: #f2f2f2;
-							padding: 14px 10px 23px 10px;
+							padding: 14px 10px 23px 8px;
 
 							.demo-show {
 								display: block !important;
@@ -1836,8 +1845,8 @@ li {
 									z-index: 1;
 									position: absolute;
 									top: 50%;
-									margin-top: -1px;
-									left: 5px;
+									margin-top: -3px;
+									left: 8px;
 									background: url(../images/minus.svg) no-repeat;
 									width: 14px;
 									height: 2px;
@@ -2561,7 +2570,7 @@ li {
 			//position: relative;
 			width: 100%;
 			height: 100%;
-			padding: 0 20px;
+			padding: 0 20px 0 24px;
 			//padding-top: 18px;
 			//padding-left: 20px;
 			//padding-right: 10px;
@@ -2655,16 +2664,16 @@ li {
 		}
 
 		.services__table {
-			min-height: 230px;
 			width: 100%;
-
-			margin: 41px 0 0;
+			min-height: 230px;
+			margin: 28px 0 0;
 
 			&-item {
-				margin-top: -10px;
 				flex-direction: column;
 				align-items: center;
 				justify-content: normal;
+				margin-top: -10px;
+				padding: 10px 20px 0 24px;
 			}
 
 			&-svg {
@@ -2700,7 +2709,7 @@ li {
 
 			&__desc {
 				margin: 0;
-				padding: 13px 0 35px;
+				padding: 23px 0 35px;
 				font-family: $Larsseit;
 				font-style: normal;
 				font-weight: 300;
@@ -4091,7 +4100,7 @@ li {
 	&__title {
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 7px;
+		margin-bottom: 17px;
 
 		&-name {
 			@include title-small();
@@ -4099,7 +4108,7 @@ li {
 	}
 
 	.col__item {
-		padding: 20px 10px 20px;
+		padding: 10px;
 		//padding: 20px 8px 20px 8px;
 		//margin-left: 12px;
 		transition: ease .33s;
@@ -4180,7 +4189,9 @@ li {
 		.col__item {
 			padding: 0 8px 0;
 			margin-bottom: 20px;
-
+			&:hover {
+				box-shadow: none;
+			}
 		}
 		&__item {
 			&-tag {

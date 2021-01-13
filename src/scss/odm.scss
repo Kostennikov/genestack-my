@@ -19,10 +19,6 @@
 	}
 }
 
-.container-fluid {
-	max-width: 1200px;
-}
-
 .hero {
 	position: relative;
 	z-index: -1;
@@ -1320,7 +1316,7 @@
 					z-index: 1;
 					position: absolute;
 					top: 50%;
-					left: -28px;
+					left: -26px;
 					background: url(../images/minus.svg) no-repeat;
 					width: 14px;
 					height: 2px;
@@ -1567,7 +1563,7 @@
 						z-index: 1;
 						position: absolute;
 						top: 25%;
-						left: -28px;
+						left: -26px;
 						background: url(../images/plus-white.svg) no-repeat;
 						width: 14px;
 						height: 14px;
@@ -1578,7 +1574,11 @@
 			}
 
 			.circle-demo__active {
-				padding: 18px 13px 7px 34px;
+				padding: 18px 13px 7px 35px;
+				&:last-child{
+
+					margin-bottom: 0;
+				}
 			}
 
 			&__btn {
