@@ -133,33 +133,39 @@ observer.observe(circle);
 
 			circlePart.classList.add('constructor-active');
 
-			showDemo(target, num);
+			// showDemo(target, num);
 			// let trigger = event.target.closest('.circle-constructor__line');
 			// if (target || trigger) {
 			// 	targetArc(event);
 			// 	// targetLine(event);
 			// }
-			return
 		});
 
 	});
 })();
 
-function showDemo(target, num) {
-	console.log(circleItem.target, circleItem.num);
-	circleItem.target = target;
-	circleItem.num = num;
-}
+// function showDemo(target, num) {
+// 	console.log('circleItem.target:', circleItem.target);
+// 	console.log('circleItem.num:', circleItem.num);
+// 	circleItem.target = target;
+// 	circleItem.num = num;
+// }
 
 const circleItems = document.querySelector('.circle-demo__items');
 const circleItem = document.querySelectorAll('.circle-demo__item');
-
 const circleContent = document.querySelectorAll('.circle-demo__content');
-
-circleItems.addEventListener('click', function (event) {
+const circleContainer = document.querySelector('.circle-container');
+circleContainer.addEventListener('click', function (event) {
 	event.preventDefault();
 	let target = event.target.closest('.circle-demo__item');
+	let circle = event.target.closest('.circle-constructor');
+	let dataNum = target.getAttribute('dataNum');
+
+	console.log('target:',target);
+	console.log('circle:',circle);
+
 	if (!target) return;
+
 	circleItem.forEach(function (event) {
 		event.classList.remove('circle-demo__active');
 		target.classList.add('circle-demo__active');
@@ -168,6 +174,16 @@ circleItems.addEventListener('click', function (event) {
 		circleContent.classList.remove('circle-demo__show');
 		target.querySelector('.circle-demo__content').classList.add('circle-demo__show');
 	});
+	circleConstructor.forEach((circleConstructor) => {
+		circleConstructor.classList.remove('constructor-active');
+		if (dataNum === 1){
+			console.log('привет ёба');
+			circle.classList.add('constructor-active');
+		}
+		// let circlePart = event.target.closest('.circle-constructor');
+	})
+
+
 });
 
 // function showDemo(target, num) {

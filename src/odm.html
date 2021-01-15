@@ -6,8 +6,6 @@
 	<link rel="stylesheet" href="scss/layout.scss">
 	<link rel="stylesheet" href="scss/odm.scss">
 	<meta name="viewport" content="width=device-width">
-	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-	<link href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
 
 </head>
 <body class="page">
@@ -372,7 +370,7 @@
 					<h1 class="circle-title">ODM at a glance</h1>
 					<div class="circle-items">
 
-						<div class="circle-constructor constructor-top" data-target="active" data-num="1"
+						<div class="circle-constructor constructor-top" data-target="active" circleNum="1"
 						     data-active>
 							<img class="circle-constructor__img circle-top" src="images/circle-top.svg"
 							     alt="">
@@ -437,7 +435,7 @@
 							</div>
 						</div>
 
-						<div class="circle-constructor constructor-left" data-target="null" data-num="2">
+						<div class="circle-constructor constructor-left" data-target="null" circleNum="2">
 							<img class="circle-constructor__img circle-left" src="images/circle-left.svg"
 							     alt="">
 							<svg class="circle-constructor__lite circle-lite__right" width="342" height="142"
@@ -500,7 +498,7 @@
 							</div>
 						</div>
 
-						<div class="circle-constructor constructor-right" data-target="null" data-num="3">
+						<div class="circle-constructor constructor-right" data-target="null" circleNum="3">
 							<img class="circle-constructor__img circle-right" src="images/circle-right.svg"
 							     alt="">
 							<svg class="circle-constructor__lite circle-lite__left" width="342" height="142"
@@ -571,8 +569,9 @@
 						<div class="col-sm-12 offset-sm-0 col-md-10 offset-md-1 demo-row">
 							<div class="circle-demo">
 								<div class="circle-demo__items">
-									<div class="circle-demo__item circle-demo__active" data-target="active"
-									     data-num="1">
+
+									<div class="circle-demo__item circle-demo__active" active="active"
+									     dataNum="1">
 										<div class="circle-demo__btn circle-demo__plus">Efficient data
 											mining
 										</div>
@@ -588,7 +587,7 @@
 										</div>
 									</div>
 
-									<div class="circle-demo__item" data-target="null" data-num="2">
+									<div class="circle-demo__item" dataNum="2">
 										<div class="circle-demo__btn">High-quality data at your fingertips
 										</div>
 										<div class="circle-demo__content">
@@ -602,7 +601,7 @@
 										</div>
 									</div>
 
-									<div class="circle-demo__item" data-target="null" data-num="3">
+									<div class="circle-demo__item" data-target="null" dataNum="3">
 										<div class="circle-demo__btn">Driven by data model & curation tools
 										</div>
 										<div class="circle-demo__content">
@@ -615,6 +614,7 @@
 											</p>
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>

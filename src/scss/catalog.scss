@@ -1,61 +1,7 @@
 @import "variables";
 @import "mixins";
-
-* {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
-
-ul {
-	margin-bottom: 0 !important;
-}
-
-li {
-	@include link-style;
-}
-.container-fluid {
-	max-width: 1260px;
-}
-@keyframes scroll {
-	0% {
-		transform: translate(0, 0);
-	}
-	100% {
-		transform: translate(-150%, 0);
-	}
-}
-
-@keyframes lineActive {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes line {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0.5;
-	}
-}
-
-.page {
-	position: relative;
-	font-size: 100%;
-	font-family: $Larsseit;
-	font-weight: 300;
-	margin: 0;
-	padding: 0;
-}
-
-.page-hidden {
-	overflow: hidden;
-}
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
 
 .hero {
 	position: relative;
@@ -414,11 +360,11 @@ li {
 		display: flex;
 
 
-		padding: 5px;
+		padding: 6px;
 		border: 1px solid #023F79;
 		border-radius: 40px;
-		width: 250px;
-		height: 56px;
+		width: 252px;
+		height: 58px;
 		line-height: 56px;
 		cursor: pointer;
 		//text-align: center;
@@ -440,17 +386,15 @@ li {
 		&-link {
 			align-self: center;
 			margin: 0 auto;
-			padding-right: 30px;
+			padding-right: 20px;
 			font-family: $Larsseit;
 			font-style: normal;
 			font-weight: 500;
 			font-size: 16px;
 			line-height: 130%;
-			/* identical to box height, or 21px */
 
 			text-align: center;
 
-			/* GS darkblue */
 
 			color: #023F79;
 

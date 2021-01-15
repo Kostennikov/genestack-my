@@ -1,24 +1,7 @@
 @import "variables";
 @import "mixins";
-
-@keyframes active {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes activeDote {
-	0% {
-		transition: (-100%, 0);
-	}
-	100% {
-		transition: (100%, 0);
-	}
-}
-
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
 .hero {
 	position: relative;
 	z-index: -1;
@@ -712,26 +695,17 @@
 		}
 	}
 
-	.slider-row{
-		opacity: 1 !important;
-	}
-
 	.catalogue {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 		padding-top: 33px;
-		//justify-content: space-around;
-		//align-items: center;
-		//padding-bottom: 50px;
-		//margin: 0 -15px;
 
 		&__items {
 			margin-bottom: 16px;
 		}
 
 		&__item {
-
 
 		}
 
@@ -838,7 +812,9 @@
 		.slider-row{
 			margin-bottom: 24px;
 		}
-
+		.slider-row{
+			opacity: 1 !important;
+		}
 		.catalogue {
 			padding-top: 40px;
 			&__items {
@@ -921,6 +897,7 @@
 		margin-bottom: 28px;
 		.slider-row{
 			margin-bottom: 35px;
+			opacity: 1 !important;
 		}
 		padding-top: 0;
 		.catalogue {

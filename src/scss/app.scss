@@ -1,5 +1,7 @@
 @import "variables";
 @import "mixins";
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
 
 * {
 	box-sizing: border-box;
@@ -1018,8 +1020,8 @@ li {
 
 			&__links {
 
-				height: $header-mod-height;
-				line-height: $header-mod-height;
+				height: $odm-header-height;
+				line-height: $odm-header-height;
 
 				&-text {
 					padding-left: 0;
